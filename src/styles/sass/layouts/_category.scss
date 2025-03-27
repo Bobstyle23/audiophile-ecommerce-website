@@ -35,6 +35,15 @@
   .categories {
     grid-template-columns: repeat(3, minmax(22.3rem, 35rem));
     padding: calc(5.2rem + 9.6rem) 4rem 9.6rem;
+
+    .category {
+      transition: all 0.3s ease;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+      }
+    }
   }
 }
 
