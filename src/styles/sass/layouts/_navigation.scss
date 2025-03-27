@@ -1,0 +1,34 @@
+.navigation {
+  display: none;
+
+  &__list {
+    @extend %flexbox;
+    flex-flow: row nowrap;
+  }
+}
+
+@include respond-to($breakpoint-large-tablets) {
+  .navigation {
+    display: block;
+
+    &__list {
+      gap: 3.4rem;
+
+      a {
+        &:link,
+        &:visited {
+          font-size: 1.3rem;
+          line-height: calc(2.5 / 1.3);
+          letter-spacing: 0.2rem;
+          text-transform: uppercase;
+          color: $color-white;
+        }
+
+        &:hover,
+        &:active {
+          color: $color-burnt-orange;
+        }
+      }
+    }
+  }
+}

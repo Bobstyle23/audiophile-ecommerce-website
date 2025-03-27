@@ -1,9 +1,26 @@
 .icon {
-  fill: transparent;
-
   &__arrow {
     width: 0.5rem;
     height: 1rem;
     stroke: $color-burnt-orange;
+    fill: transparent;
+  }
+
+  &__logo {
+    width: 14.3rem;
+    height: 2.5rem;
+    fill: $color-white;
+  }
+
+  &__cart {
+    width: 2.4rem;
+    height: 2rem;
+    fill: $color-white;
+  }
+
+  &__hamburger {
+    width: 1.6rem;
+    height: 1.5rem;
+    fill: $color-white;
   }
 }
