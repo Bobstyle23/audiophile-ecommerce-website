@@ -13,7 +13,6 @@
 
   .recommendation {
     @extend %flexbox;
-    gap: 3.2rem;
     max-width: 35rem;
 
     &__image img {
@@ -22,6 +21,7 @@
 
     &__title {
       @include typography(2.4rem, 700, $spacing: 0.171rem);
+      margin: 3.2rem 0;
     }
 
     &__link {
@@ -44,8 +44,26 @@
     }
 
     .recommendation {
-      &__image {
-        margin-bottom: 0.8rem;
+      &__title {
+        margin-block-start: 4rem;
+        margin-block-end: 3.2rem;
+      }
+    }
+  }
+}
+
+@include respond-to($breakpoint-desktops) {
+  .recommendations {
+    margin-inline: auto;
+    row-gap: 6.4rem;
+    column-gap: 3rem;
+
+    .recommendation {
+      transition: all 0.3s ease;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
       }
     }
   }
