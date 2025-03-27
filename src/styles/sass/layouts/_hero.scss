@@ -1,0 +1,35 @@
+.hero {
+  @extend %flexbox;
+  border-top: 1px solid rgba($color: $color-white, $alpha: 0.104);
+  background-image: url("../img/home/mobile/image-header.webp");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 51rem;
+  padding-inline: 2.4rem;
+  text-align: center;
+
+  &__subtitle {
+    @extend %overline;
+    line-height: 1;
+    color: rgba($color: $color-white, $alpha: 0.5);
+    margin-block-end: 1.6rem;
+  }
+
+  &__title {
+    @include typography(3.6rem, 700, calc(4 / 3.6), 0.129rem);
+    color: $color-white;
+    margin-block-end: 2.4rem;
+    text-wrap: auto;
+  }
+
+  &__description {
+    @extend %body;
+    color: rgba($color: $color-white, $alpha: 0.75);
+    margin-block-end: 2.8rem;
+  }
+
+  &__link {
+    padding-block: 1.6rem;
+  }
+}
