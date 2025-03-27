@@ -84,3 +84,37 @@
     }
   }
 }
+
+@include respond-to($breakpoint-desktops) {
+  .footer {
+    &__content {
+      padding: 7.5rem 0 4.8rem;
+      row-gap: 3.6rem;
+
+      &::before {
+        left: 0;
+      }
+    }
+
+    &__navigation {
+      grid-column: 2;
+      justify-self: end;
+    }
+
+    &__info,
+    &__copyright {
+      grid-column: 1 / 2;
+    }
+
+    &__info {
+      margin: 0;
+      margin-bottom: calc(5.6rem - 3.6rem);
+    }
+
+    &__icons {
+      grid-area: 2 / 2;
+      align-self: start;
+      margin-top: calc(10.5rem - 3.6rem);
+    }
+  }
+}

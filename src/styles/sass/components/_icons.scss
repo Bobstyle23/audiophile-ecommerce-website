@@ -30,6 +30,7 @@
     fill: $color-white;
 
     &:hover {
+      cursor: pointer;
       fill: $color-burnt-orange;
     }
   }
