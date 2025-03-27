@@ -10,12 +10,20 @@
     width: 14.3rem;
     height: 2.5rem;
     fill: $color-white;
+
+    &:hover {
+      fill: $color-burnt-orange;
+    }
   }
 
   &__cart {
     width: 2.4rem;
     height: 2rem;
     fill: $color-white;
+
+    &:hover {
+      fill: $color-burnt-orange;
+    }
   }
 
   &__hamburger {
