@@ -1,0 +1,61 @@
+.categories {
+  @extend %grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(32.7rem, 100%), 1fr));
+  padding: calc(5.2rem + 4rem) 2.4rem 12rem;
+  row-gap: calc(5.2rem + 1.6rem);
+  column-gap: 1rem;
+
+  .category {
+    @extend %flexbox;
+    gap: 1.7rem;
+    background-color: $color-light-gray;
+    border-radius: 0.8rem;
+    position: relative;
+    height: 16.5rem;
+    max-width: 35rem;
+    width: 100%;
+
+    &__image {
+      width: auto;
+      height: 10.4rem;
+      position: absolute;
+      top: -50%;
+      transform: translateY(40%);
+    }
+
+    &__title {
+      @include typography(1.5rem, $spacing: 0.107rem);
+      margin-block-start: 3.6rem;
+      color: $color-black;
+    }
+  }
+}
+
+@include respond-to($breakpoint-tablets) {
+  .categories {
+    grid-template-columns: repeat(3, minmax(22.3rem, 35rem));
+    padding: calc(5.2rem + 9.6rem) 4rem 9.6rem;
+  }
+}
+
+@include respond-to($breakpoint-desktops) {
+  .categories {
+    padding: calc(8rem + 12rem) 0 16.8rem;
+    column-gap: 3rem;
+
+    .category {
+      height: 20.4rem;
+      gap: 1.5rem;
+
+      &__image {
+        height: 16rem;
+        top: -60%;
+      }
+
+      &__title {
+        font-size: 1.8rem;
+        letter-spacing: 0.129rem;
+      }
+    }
+  }
+}
