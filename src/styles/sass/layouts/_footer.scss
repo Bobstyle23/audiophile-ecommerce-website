@@ -1,23 +1,23 @@
 .footer {
   background-color: $color-almost-black;
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
-    height: 0.4rem;
-    width: 10rem;
-    background-color: $color-burnt-orange;
-  }
 
   &__content {
     @extend %grid;
     row-gap: 4.8rem;
     padding: 5.2rem 2.4rem 3.8rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      right: 50%;
+      transform: translateX(-50%);
+      height: 0.4rem;
+      width: 10rem;
+      background-color: $color-burnt-orange;
+    }
   }
 
   &__navigation {
@@ -45,5 +45,42 @@
     @extend %flexbox;
     flex-flow: row nowrap;
     gap: 1.6rem;
+  }
+}
+
+@include respond-to($breakpoint-tablets) {
+  .footer {
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 6rem 4rem 4.6rem;
+      row-gap: 3.2rem;
+      justify-items: start;
+
+      &::before {
+        left: 4rem;
+        transform: translate(0);
+      }
+    }
+
+    &__navigation,
+    &__info {
+      grid-column: 1 / -1;
+    }
+
+    &__navigation {
+      .navigation__list {
+        flex-flow: row nowrap;
+        gap: 3.4rem;
+      }
+    }
+
+    &__info {
+      text-align: justify;
+      margin-bottom: calc(8rem - 3.2rem);
+    }
+
+    &__icons {
+      justify-self: end;
+    }
   }
 }
