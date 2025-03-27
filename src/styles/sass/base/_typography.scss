@@ -1,0 +1,36 @@
+%heading-1 {
+  @include typography(5.6rem, $height: calc(5.8 / 5.6), $spacing: 0.15rem);
+}
+
+%heading-2 {
+  @include typography(4rem, $height: calc(4.8 / 4), $spacing: 0.15rem);
+}
+
+%heading-3 {
+  @include typography(3.2rem, $height: calc(3.6 / 3.2), $spacing: 0.115rem);
+}
+
+%heading-4 {
+  @include typography(2.8rem, $height: calc(3.8 / 2.8), $spacing: 0.2rem);
+}
+
+%heading-5 {
+  @include typography(2.4rem, $height: calc(3.3 / 2.4), $spacing: 0.17rem);
+}
+
+%heading-6 {
+  @include typography(1.8rem, $height: calc(2.4 / 1.8), $spacing: 0.13rem);
+}
+
+%overline {
+  @include typography(1.4rem, 400, calc(1.9 / 1.4), 1rem);
+}
+
+%subtitle {
+  @include typography(1.3rem, $height: calc(2.5 / 1.3), $spacing: 0.1rem);
+}
+
+%body {
+  @include typography(1.5rem, 500, calc(2.5 / 1.5));
+  text-transform: none;
+}

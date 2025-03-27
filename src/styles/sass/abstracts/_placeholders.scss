@@ -11,3 +11,11 @@
   align-items: center;
   justify-items: center;
 }
+
+%button-style {
+  @include typography(1.3rem, $spacing: 0.1rem);
+  background: none;
+  width: 16rem;
+  height: 4.8rem;
+  transition: all 0.25s ease;
+}
