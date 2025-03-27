@@ -1,7 +1,7 @@
 .categories {
   @extend %grid;
   grid-template-columns: repeat(auto-fit, minmax(min(32.7rem, 100%), 1fr));
-  padding: calc(5.2rem + 4rem) 2.4rem 12rem;
+  margin: calc(5.2rem + 4rem) 2.4rem 12rem;
   row-gap: calc(5.2rem + 1.6rem);
   column-gap: 1rem;
 
@@ -34,7 +34,7 @@
 @include respond-to($breakpoint-tablets) {
   .categories {
     grid-template-columns: repeat(3, minmax(22.3rem, 35rem));
-    padding: calc(5.2rem + 9.6rem) 4rem 9.6rem;
+    margin: calc(5.2rem + 9.6rem) 4rem 9.6rem;
 
     .category {
       transition: all 0.3s ease;
@@ -49,7 +49,7 @@
 
 @include respond-to($breakpoint-desktops) {
   .categories {
-    padding: calc(8rem + 12rem) 0 16.8rem;
+    margin: calc(8rem + 12rem) auto 16.8rem;
     column-gap: 3rem;
 
     .category {
