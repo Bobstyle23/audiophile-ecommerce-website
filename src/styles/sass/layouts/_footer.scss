@@ -1,0 +1,49 @@
+.footer {
+  background-color: $color-almost-black;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    height: 0.4rem;
+    width: 10rem;
+    background-color: $color-burnt-orange;
+  }
+
+  &__content {
+    @extend %grid;
+    row-gap: 4.8rem;
+    padding: 5.2rem 2.4rem 3.8rem;
+  }
+
+  &__navigation {
+    .navigation__list {
+      flex-flow: column nowrap;
+      gap: 1.6rem;
+    }
+  }
+
+  &__info,
+  &__copyright {
+    @extend %body;
+    color: rgba($color: $color-white, $alpha: 0.5);
+  }
+
+  &__info {
+    text-align: center;
+  }
+
+  &__copyright {
+    font-weight: 700;
+  }
+
+  &__icons {
+    @extend %flexbox;
+    flex-flow: row nowrap;
+    gap: 1.6rem;
+  }
+}

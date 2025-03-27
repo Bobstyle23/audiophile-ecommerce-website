@@ -23,4 +23,14 @@
     height: 1.5rem;
     fill: $color-white;
   }
+
+  &__social-media {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: $color-white;
+
+    &:hover {
+      fill: $color-burnt-orange;
+    }
+  }
 }
