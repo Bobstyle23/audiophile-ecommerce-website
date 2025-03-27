@@ -1,0 +1,29 @@
+.recommendations {
+  @extend %grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(32.7rem, 100%), 1fr));
+  row-gap: 5.6rem;
+  margin: 12rem 2.4rem;
+
+  &__heading {
+    @include typography(2.4rem, 700, calc(3.6 / 2.4), 0.086rem);
+    margin-bottom: -1.6rem;
+  }
+
+  .recommendation {
+    @extend %flexbox;
+    gap: 3.2rem;
+
+    &__image img {
+      border-radius: 0.8rem;
+    }
+
+    &__title {
+      @include typography(2.4rem, 700, $spacing: 0.171rem);
+    }
+
+    &__link {
+      text-align: center;
+      padding-block: 1.6rem;
+    }
+  }
+}
