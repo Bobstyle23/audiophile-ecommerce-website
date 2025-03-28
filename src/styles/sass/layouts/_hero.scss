@@ -1,13 +1,23 @@
 .hero {
-  @extend %flexbox;
-  border-top: 1px solid rgba($color: $color-white, $alpha: 0.104);
-  background-image: url("../img/home/mobile/image-header.webp");
-  background-position: bottom;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 51rem;
-  padding-inline: 2.4rem;
+  @extend %grid;
   text-align: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: $color-white, $alpha: 0.104);
+    width: 100%;
+    height: 0.1rem;
+    display: inline-block;
+  }
+
+  &__content {
+    position: absolute;
+    padding-inline: 2.4rem;
+  }
 
   &__subtitle {
     @extend %overline;
@@ -31,5 +41,28 @@
 
   &__link {
     padding-block: 1.6rem;
+  }
+}
+
+@include respond-to($breakpoint-tablets) {
+  .hero {
+    &__content {
+      padding-inline: 0;
+      max-width: 38rem;
+    }
+
+    &__subtitle {
+      margin-block-end: 2.4rem;
+    }
+
+    &__title {
+      font-size: 5.6rem;
+      line-height: calc(5.8 / 5.6);
+      letter-spacing: 0.2rem;
+    }
+
+    &__description {
+      margin-block-end: 4rem;
+    }
   }
 }

@@ -1,9 +1,24 @@
 <section class="hero">
-  <h4 class="hero__subtitle">New product</h4>
-  <h1 class="hero__title">xx99 Mark Ⅱ headphones</h1>
-  <p class="hero__description">
-    Experience natural, lifelike audio and exceptional build quality made for
-    the passionate music enthusiast.
-  </p>
-  <a href="#" class="btn btn__primary hero__link">See product</a>
+  <picture class="hero__image">
+    <source
+      srcset="./img/home/desktop/image-header.webp"
+      media="(min-width: 75em)"
+      type="image/webp"
+    />
+    <source
+      srcset="./img/home/tablet/image-header.webp"
+      media="(min-width: 48em)"
+      type="image/webp"
+    />
+    <img src="./img/home/mobile/image-header.webp" alt="" />
+  </picture>
+  <div class="hero__content">
+    <h4 class="hero__subtitle">New product</h4>
+    <h1 class="hero__title">xx99 Mark Ⅱ headphones</h1>
+    <p class="hero__description">
+      Experience natural, lifelike audio and exceptional build quality made for
+      the passionate music enthusiast.
+    </p>
+    <a href="#" class="btn btn__primary hero__link">See product</a>
+  </div>
 </section>
