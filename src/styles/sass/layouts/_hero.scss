@@ -63,6 +63,27 @@
 
     &__description {
       margin-block-end: 4rem;
+      max-width: 35rem;
+      text-wrap: auto;
+    }
+  }
+}
+
+@include respond-to($breakpoint-desktops) {
+  .hero {
+    grid-template-columns: repeat(2, 1fr);
+
+    &__image {
+      grid-column: 1 / -1;
+    }
+
+    &__content {
+      text-align: left;
+      grid-column: 1 / 2;
+    }
+
+    &__link {
+      text-align: center;
     }
   }
 }
