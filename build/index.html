@@ -69,7 +69,70 @@
     <a href="#" class="btn btn__primary hero__link">See product</a>
   </div>
 </section>
- <section class="categories container">
+ <section class="gallery container">
+  <picture class="gallery__image gallery__image--first">
+    <source
+      srcset="
+        ./img/product-xx99-mark-two-headphones/desktop/image-gallery-1.webp
+      "
+      media="(min-width: 75em)"
+      type="image/webp"
+    />
+    <source
+      srcset="
+        ./img/product-xx99-mark-two-headphones/tablet/image-gallery-1.webp
+      "
+      media="(min-width: 48em)"
+      type="image/webp"
+    />
+    <img
+      src="./img/product-xx99-mark-two-headphones/mobile/image-gallery-1.webp"
+      alt=""
+    />
+  </picture>
+  <picture class="gallery__image gallery__image--second">
+    <source
+      srcset="
+        ./img/product-xx99-mark-two-headphones/desktop/image-gallery-2.webp
+      "
+      media="(min-width: 75em)"
+      type="image/webp"
+    />
+    <source
+      srcset="
+        ./img/product-xx99-mark-two-headphones/tablet/image-gallery-2.webp
+      "
+      media="(min-width: 48em)"
+      type="image/webp"
+    />
+    <img
+      src="./img/product-xx99-mark-two-headphones/mobile/image-gallery-2.webp"
+      alt=""
+    />
+  </picture>
+  <picture class="gallery__image gallery__image--third">
+    <source
+      srcset="
+        ./img/product-xx99-mark-two-headphones/desktop/image-gallery-3.webp
+      "
+      media="(min-width: 75em)"
+      type="image/webp"
+    />
+    <source
+      srcset="
+        ./img/product-xx99-mark-two-headphones/tablet/image-gallery-3.webp
+      "
+      media="(min-width: 48em)"
+      type="image/webp"
+    />
+    <img
+      src="./img/product-xx99-mark-two-headphones/mobile/image-gallery-3.webp"
+      alt=""
+    />
+  </picture>
+</section>
+
+      <section class="categories container">
   <article class="category">
     <img
       class="category__image"
@@ -113,8 +176,7 @@
     </a>
   </article>
 </section>
-
-      <section class="recommendations container">
+ <section class="recommendations container">
   <h2 class="recommendations__heading">You may also like</h2>
   <article class="recommendation">
     <picture class="recommendation__image">
@@ -171,7 +233,8 @@
     <a href="#" class="btn btn__primary recommendation__link">See product</a>
   </article>
 </section>
- <section class="store container">
+
+      <section class="store container">
   <picture class="store__image">
     <source
       srcset="./img/shared/desktop/image-best-gear.webp"
