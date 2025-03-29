@@ -207,13 +207,14 @@
       column-gap: 3rem;
 
       &:first-of-type {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: auto 1fr;
         max-width: none;
         padding: 9.6rem 9.6rem 0;
         justify-items: start;
+        column-gap: 13.9rem;
 
         .product__image {
-          margin: 0;
+          margin: 0 0 0 calc(11.75rem - 9.6rem);
 
           &::before,
           &::after {
@@ -223,9 +224,8 @@
 
         .product__info {
           align-items: flex-start;
-          justify-self: end;
-          align-self: start;
-          margin-block-start: 4rem;
+          place-self: start;
+          margin-block-start: calc(13.3rem - 9.6rem);
         }
 
         .product__title,
