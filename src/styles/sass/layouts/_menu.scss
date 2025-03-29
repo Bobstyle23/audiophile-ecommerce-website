@@ -17,3 +17,11 @@
 .menu.open {
   transform: translateY(0);
 }
+
+@include respond-to($breakpoint-tablets) {
+  .menu {
+    section {
+      padding: 10.8rem 4rem 6.7rem;
+    }
+  }
+}
