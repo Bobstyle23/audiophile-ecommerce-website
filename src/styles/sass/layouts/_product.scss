@@ -9,6 +9,7 @@
     position: relative;
     row-gap: 2.4rem;
     overflow: hidden;
+    z-index: 2;
 
     &__speaker {
       &--zx9 {
@@ -46,8 +47,7 @@
         position: relative;
 
         &::before,
-        &::after,
-        .product__image--wrapper::after {
+        &::after {
           content: "";
           display: block;
           position: absolute;
@@ -56,6 +56,7 @@
           transform: translate(-50%, -50%);
           border: 1px solid rgba($color: $color-white, $alpha: 0.15);
           border-radius: 50%;
+          z-index: -1;
         }
 
         &::before {
@@ -66,18 +67,6 @@
         &::after {
           width: 32rem;
           height: 32rem;
-        }
-
-        .product__image--wrapper {
-          display: inline-block;
-          position: relative;
-
-          &::after {
-            width: 55.8rem;
-            height: 55.8rem;
-            top: 60%;
-            transform: translate(-50%, -52%);
-          }
         }
       }
 
@@ -136,6 +125,8 @@
     row-gap: 3.2rem;
 
     .product {
+      column-gap: 1rem;
+
       &:first-of-type {
         padding-block-end: 6.4rem;
         max-width: 68.9rem;
@@ -174,6 +165,12 @@
         .product__info {
           max-width: 35rem;
         }
+
+        .product__link {
+          &:hover {
+            background-color: #4c4c4c;
+          }
+        }
       }
 
       &:nth-of-type(2),
@@ -181,14 +178,66 @@
         .product__info {
           padding-inline: 4.1rem;
         }
+
+        .product__link {
+          &:hover {
+            background-color: $color-black;
+            color: $color-white;
+          }
+        }
       }
 
       &:last-of-type {
         grid-template-columns: repeat(2, 1fr);
-        column-gap: 1rem;
 
         .product__info {
           height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include respond-to($breakpoint-desktops) {
+  .products {
+    row-gap: 4.8rem;
+    margin-inline: auto;
+
+    .product {
+      column-gap: 3rem;
+
+      &:first-of-type {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: none;
+        padding: 9.6rem 9.6rem 0;
+        justify-items: start;
+
+        .product__image {
+          margin: 0;
+
+          &::before,
+          &::after {
+            top: 72%;
+          }
+        }
+
+        .product__info {
+          align-items: flex-start;
+          justify-self: end;
+          align-self: start;
+          margin-block-start: 4rem;
+        }
+
+        .product__title,
+        .product__description {
+          text-align: left;
+        }
+      }
+
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        .product__info {
+          padding-inline: 9.5rem;
         }
       }
     }
