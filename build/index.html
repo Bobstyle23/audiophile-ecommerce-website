@@ -116,70 +116,7 @@
     <a href="#" class="btn btn__primary hero__link">See product</a>
   </div>
 </section>
- <section class="gallery container">
-  <picture class="gallery__image gallery__image--first">
-    <source
-      srcset="
-        ./img/product-xx99-mark-two-headphones/desktop/image-gallery-1.webp
-      "
-      media="(min-width: 75em)"
-      type="image/webp"
-    />
-    <source
-      srcset="
-        ./img/product-xx99-mark-two-headphones/tablet/image-gallery-1.webp
-      "
-      media="(min-width: 48em)"
-      type="image/webp"
-    />
-    <img
-      src="./img/product-xx99-mark-two-headphones/mobile/image-gallery-1.webp"
-      alt=""
-    />
-  </picture>
-  <picture class="gallery__image gallery__image--second">
-    <source
-      srcset="
-        ./img/product-xx99-mark-two-headphones/desktop/image-gallery-2.webp
-      "
-      media="(min-width: 75em)"
-      type="image/webp"
-    />
-    <source
-      srcset="
-        ./img/product-xx99-mark-two-headphones/tablet/image-gallery-2.webp
-      "
-      media="(min-width: 48em)"
-      type="image/webp"
-    />
-    <img
-      src="./img/product-xx99-mark-two-headphones/mobile/image-gallery-2.webp"
-      alt=""
-    />
-  </picture>
-  <picture class="gallery__image gallery__image--third">
-    <source
-      srcset="
-        ./img/product-xx99-mark-two-headphones/desktop/image-gallery-3.webp
-      "
-      media="(min-width: 75em)"
-      type="image/webp"
-    />
-    <source
-      srcset="
-        ./img/product-xx99-mark-two-headphones/tablet/image-gallery-3.webp
-      "
-      media="(min-width: 48em)"
-      type="image/webp"
-    />
-    <img
-      src="./img/product-xx99-mark-two-headphones/mobile/image-gallery-3.webp"
-      alt=""
-    />
-  </picture>
-</section>
-
-      <section class="categories container">
+ <section class="categories container">
   <article class="category">
     <img
       class="category__image"
@@ -223,64 +160,76 @@
     </a>
   </article>
 </section>
- <section class="recommendations container">
-  <h2 class="recommendations__heading">You may also like</h2>
-  <article class="recommendation">
-    <picture class="recommendation__image">
-      <source
-        srcset="./img/shared/desktop/image-xx99-mark-one-headphones.webp"
-        media="(min-width: 75em)"
-        type="image/webp"
-      />
-      <source
-        srcset="./img/shared/tablet/image-xx99-mark-one-headphones.webp"
-        media="(min-width: 48em)"
-        type="image/webp"
-      />
-      <img
-        src="./img/shared/mobile/image-xx99-mark-one-headphones.webp"
-        alt=""
-      />
-    </picture>
-    <h3 class="recommendation__title">xx99 mark Ⅰ</h3>
-    <a href="#" class="btn btn__primary recommendation__link">See product</a>
-  </article>
-  <article class="recommendation">
-    <picture class="recommendation__image">
-      <source
-        srcset="./img/shared/desktop/image-xx59-headphones.webp"
-        media="(min-width: 75em)"
-        type="image/webp"
-      />
-      <source
-        srcset="./img/shared/tablet/image-xx59-headphones.webp"
-        media="(min-width: 48em)"
-        type="image/webp"
-      />
-      <img src="./img/shared/mobile/image-xx59-headphones.webp" alt="" />
-    </picture>
-    <h3 class="recommendation__title">xx59</h3>
-    <a href="#" class="btn btn__primary recommendation__link">See product</a>
-  </article>
-  <article class="recommendation">
-    <picture class="recommendation__image">
-      <source
-        srcset="./img/shared/desktop/image-zx9-speaker.webp"
-        media="(min-width: 75em)"
-        type="image/webp"
-      />
-      <source
-        srcset="./img/shared/tablet/image-zx9-speaker.webp"
-        media="(min-width: 48em)"
-        type="image/webp"
-      />
-      <img src="./img/shared/mobile/image-zx9-speaker.webp" alt="" />
-    </picture>
-    <h3 class="recommendation__title">zx59 Speaker</h3>
-    <a href="#" class="btn btn__primary recommendation__link">See product</a>
-  </article>
-</section>
 
+      <section class="products">
+        <article class="product product__speaker product__speaker--zx9">
+          <picture class="product__image">
+            <source
+              srcset="./img/home/desktop/image-speaker-zx9.webp"
+              media="(min-width: 75em)"
+              type="image/webp"
+            />
+            <source
+              srcset="./img/home/tablet/image-speaker-zx9.webp"
+              media="(min-width: 48em)"
+              type="image/webp"
+            />
+            <div class="product__image--wrapper">
+              <img src="./img/home/mobile/image-speaker-zx9.webp" alt="" />
+            </div>
+          </picture>
+          <div class="product__info">
+            <h2 class="product__title">
+              zx9 <br />
+              speaker
+            </h2>
+            <p class="product__description">
+              Upgrade to&#160;premium speakers that are phenomenally built to&#160;deliver
+              truly remarkable sound.
+            </p>
+            <a href="#" class="btn btn__primary product__link">See product</a>
+          </div>
+        </article>
+        <article class="product product__speaker product__speaker--zx7">
+          <picture class="product__image">
+            <source
+              srcset="./img/home/desktop/image-speaker-zx7.webp"
+              media="(min-width: 75em)"
+              type="image/webp"
+            />
+            <source
+              srcset="./img/home/tablet/image-speaker-zx7.webp"
+              media="(min-width: 48em)"
+              type="image/webp"
+            />
+            <img src="./img/home/mobile/image-speaker-zx7.webp" alt="" />
+          </picture>
+          <div class="product__info">
+            <h2 class="product__title">zx7 speaker</h2>
+            <a href="#" class="btn btn__secondary product__link">See product</a>
+          </div>
+        </article>
+        <article class="product product__earphone">
+          <picture class="product__image">
+            <source
+              srcset="./img/home/desktop/image-earphones-yx1.webp"
+              media="(min-width: 75em)"
+              type="image/webp"
+            />
+            <source
+              srcset="./img/home/tablet/image-earphones-yx1.webp"
+              media="(min-width: 48em)"
+              type="image/webp"
+            />
+            <img src="./img/home/mobile/image-earphones-yx1.webp" alt="" />
+          </picture>
+
+          <div class="product__info">
+            <h2 class="product__title">yx1 earphones</h2>
+            <a href="#" class="btn btn__secondary product__link">See product</a>
+          </div>
+        </article>
+      </section>
       <section class="store container">
   <picture class="store__image">
     <source

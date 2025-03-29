@@ -10,8 +10,76 @@
     @@include('./header.html')
     <div class="overlay overlay__hidden"></div>
     <main>
-      @@include('./hero.html') @@include('./gallery.html')
-      @@include('./category.html') @@include('./recommendation.html')
+      @@include('./hero.html') @@include('./category.html')
+      <section class="products">
+        <article class="product product__speaker product__speaker--zx9">
+          <picture class="product__image">
+            <source
+              srcset="./img/home/desktop/image-speaker-zx9.webp"
+              media="(min-width: 75em)"
+              type="image/webp"
+            />
+            <source
+              srcset="./img/home/tablet/image-speaker-zx9.webp"
+              media="(min-width: 48em)"
+              type="image/webp"
+            />
+            <div class="product__image--wrapper">
+              <img src="./img/home/mobile/image-speaker-zx9.webp" alt="" />
+            </div>
+          </picture>
+          <div class="product__info">
+            <h2 class="product__title">
+              zx9 <br />
+              speaker
+            </h2>
+            <p class="product__description">
+              Upgrade to premium speakers that are phenomenally built to deliver
+              truly remarkable sound.
+            </p>
+            <a href="#" class="btn btn__primary product__link">See product</a>
+          </div>
+        </article>
+        <article class="product product__speaker product__speaker--zx7">
+          <picture class="product__image">
+            <source
+              srcset="./img/home/desktop/image-speaker-zx7.webp"
+              media="(min-width: 75em)"
+              type="image/webp"
+            />
+            <source
+              srcset="./img/home/tablet/image-speaker-zx7.webp"
+              media="(min-width: 48em)"
+              type="image/webp"
+            />
+            <img src="./img/home/mobile/image-speaker-zx7.webp" alt="" />
+          </picture>
+          <div class="product__info">
+            <h2 class="product__title">zx7 speaker</h2>
+            <a href="#" class="btn btn__secondary product__link">See product</a>
+          </div>
+        </article>
+        <article class="product product__earphone">
+          <picture class="product__image">
+            <source
+              srcset="./img/home/desktop/image-earphones-yx1.webp"
+              media="(min-width: 75em)"
+              type="image/webp"
+            />
+            <source
+              srcset="./img/home/tablet/image-earphones-yx1.webp"
+              media="(min-width: 48em)"
+              type="image/webp"
+            />
+            <img src="./img/home/mobile/image-earphones-yx1.webp" alt="" />
+          </picture>
+
+          <div class="product__info">
+            <h2 class="product__title">yx1 earphones</h2>
+            <a href="#" class="btn btn__secondary product__link">See product</a>
+          </div>
+        </article>
+      </section>
       @@include('./store-intro.html')
     </main>
     @@include("./footer.html")
