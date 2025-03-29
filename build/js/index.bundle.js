@@ -1,0 +1,1 @@
+(()=>{const e=document.querySelector(".header__btn--hamburger"),c=document.querySelector(".menu"),t=document.querySelector(".overlay"),r=()=>{c.classList.toggle("open"),t.classList.toggle("overlay__hidden")};e.addEventListener("click",(()=>r())),t.addEventListener("click",(()=>r())),[...c.children[0].children].forEach((e=>{e.addEventListener("click",(e=>r()))}))})();

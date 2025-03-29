@@ -18,3 +18,21 @@
     @include typography(1.3rem, 700, $spacing: 0.1rem);
   }
 }
+
+.overlay {
+  position: fixed;
+  top: 9.1rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+
+  &__hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

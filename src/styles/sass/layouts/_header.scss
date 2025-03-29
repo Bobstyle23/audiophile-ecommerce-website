@@ -1,5 +1,6 @@
 .header {
   background-color: $color-black;
+  position: relative;
 
   &__content {
     @extend %grid;
