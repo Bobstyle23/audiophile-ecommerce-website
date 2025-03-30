@@ -35,6 +35,7 @@
   .recommendations {
     grid-template-columns: repeat(3, minmax(22.3rem, 1fr));
     margin-inline: 4rem;
+    justify-content: center;
 
     &__heading {
       margin-bottom: 0;
