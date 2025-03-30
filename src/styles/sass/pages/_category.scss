@@ -1,0 +1,53 @@
+.category {
+  &__header {
+    background-color: $color-black;
+    min-height: 10.6rem;
+    text-align: center;
+  }
+
+  &__heading {
+    @include typography(2.8rem, 700, $spacing: 0.2rem);
+    padding-block: 3.2rem;
+    color: $color-white;
+  }
+
+  &__products {
+    @extend %flexbox;
+    flex-flow: column-reverse nowrap;
+    gap: 12rem;
+    margin: 6.4rem 2.4rem 12rem;
+  }
+
+  &__product {
+    @extend %grid;
+    row-gap: 3.2rem;
+  }
+
+  &__image img {
+    border-radius: 0.8rem;
+  }
+
+  &__info {
+    @extend %flexbox;
+    gap: 2.4rem;
+    text-align: center;
+  }
+
+  &--new {
+    @extend %overline;
+    color: $color-burnt-orange;
+  }
+
+  &__title {
+    @include typography(2.8rem, 700, $spacing: 0.1rem);
+  }
+
+  &__description {
+    @extend %body;
+    color: rgba($color: #000000, $alpha: 0.5);
+  }
+
+  &__link {
+    padding-block: 1.6rem;
+  }
+}
