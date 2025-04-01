@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Category | Detail</title>
+    <link href="./css/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="overlay overlay__hidden"></div>
+    @@include('./header.html')
+
+    <main class="detail">
+      <picture class="detail__image">
+        <source srcset="" />
+        <source srcset="" />
+        <img src="" alt="" />
+      </picture>
+      @@include("./gallery.html") @@include("./recommendation.html")
+      @@include('./categories.html') @@include('./store-intro.html')
+    </main>
+
+    @@include('./footer.html')
+
+    <script src="./js/index.bundle.js"></script>
+    <script src="./js/detail.bundle.js"></script>
+  </body>
+</html>

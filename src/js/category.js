@@ -7,9 +7,13 @@ const categoryProducts = document.querySelector(".category__products");
 
 heading.textContent = categoryId;
 
+const storageItem = JSON.stringify(data);
+sessionStorage.setItem("productData", storageItem);
+
 data.forEach((item) => {
   if (item.category === categoryId) {
     console.log(item);
+
     const categoryProduct = document.createElement("article");
     categoryProduct.classList.add("category__product");
     categoryProduct.classList.add("container");

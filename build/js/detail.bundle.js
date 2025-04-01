@@ -1,0 +1,1 @@
+(()=>{const e=JSON.parse(sessionStorage.getItem("productData")),o=new URLSearchParams(window.location.search).get("id"),a=e.find((e=>e.slug===o));console.log(a)})();

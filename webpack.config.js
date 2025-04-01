@@ -25,6 +25,7 @@ const config = {
   entry: {
     index: "./src/js/index.js",
     category: "./src/js/category.js",
+    detail: "./src/js/category-detail.js",
   },
   output: {
     filename: "[name].bundle.js",

@@ -89,11 +89,21 @@
   .category {
     &__product {
       grid-template-columns: repeat(2, minmax(0, auto));
-      column-gap: 6rem;
+      column-gap: 7.2rem;
 
       &:nth-of-type(even) div {
         order: -1;
       }
+    }
+
+    &__info {
+      max-width: 44.5rem;
+      text-align: left;
+      align-items: flex-start;
+    }
+
+    &__link {
+      text-align: center;
     }
   }
 }
@@ -111,18 +121,8 @@
       column-gap: 12.5rem;
     }
 
-    &__info {
-      max-width: 44.5rem;
-      text-align: left;
-      align-items: flex-start;
-    }
-
     &__description {
       margin-block-end: 4rem;
-    }
-
-    &__link {
-      text-align: center;
     }
   }
 }
