@@ -7,7 +7,6 @@
 
   .category {
     @extend %flexbox;
-    gap: 1.7rem;
     background-color: $color-light-gray;
     border-radius: 0.8rem;
     position: relative;
@@ -25,7 +24,7 @@
 
     &__title {
       @include typography(1.5rem, $spacing: 0.107rem);
-      margin-block-start: 3.6rem;
+      margin-block-start: 7.2rem;
       color: $color-black;
     }
   }
@@ -55,11 +54,10 @@
 
     .category {
       height: 20.4rem;
-      gap: 1.5rem;
 
       &__image {
         height: 16rem;
-        top: -60%;
+        top: -70%;
       }
 
       &__title {

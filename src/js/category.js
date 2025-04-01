@@ -21,7 +21,7 @@ data.forEach((item) => {
           </picture>
           <div class="category__info">
             <small class="category--new">${item.new ? "New Product" : ""}</small>
-            <h2 class="category__title">${item.name}</h2>
+            <h2 class="category__name">${item.name}</h2>
             <p class="category__description">${item.description}</p>
             <a href="./category-detail.html?id=${item.slug}" class="btn btn__primary category__link">See Product</a>
           </div>`;
