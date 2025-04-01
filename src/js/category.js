@@ -12,6 +12,7 @@ data.forEach((item) => {
     console.log(item);
     const categoryProduct = document.createElement("article");
     categoryProduct.classList.add("category__product");
+    categoryProduct.classList.add("container");
 
     categoryProduct.innerHTML = `
           <picture class="category__image">
