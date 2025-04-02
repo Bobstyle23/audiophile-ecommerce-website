@@ -12,10 +12,14 @@
 
     <main class="detail">
       <picture class="detail__image">
-        <source srcset="" />
-        <source srcset="" />
-        <img src="" alt="" />
+        <source media="(min-width: 64em)" type="image/webp" />
+        <source media="(min-width:48em)" type="image/webp" />
+        <img alt="" />
       </picture>
+      <section class="included container">
+        <h3 class="included__title">In the box</h3>
+        <ul class="included__list" role="list"></ul>
+      </section>
       @@include("./gallery.html") @@include("./recommendation.html")
       @@include('./categories.html') @@include('./store-intro.html')
     </main>
