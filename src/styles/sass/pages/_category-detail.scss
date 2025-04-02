@@ -1,4 +1,23 @@
 .detail {
+  .features {
+    margin-inline: 2.4rem;
+    margin-block: 8.8rem;
+
+    &__title {
+      @include typography(2.4rem, 700, calc(3.6 / 2.4), 0.086rem);
+      margin-block-end: 2.4rem;
+    }
+
+    &__text {
+      @extend %body;
+      color: rgba($color: #000, $alpha: 0.5);
+
+      &:first-of-type {
+        margin-block-end: 3.2rem;
+      }
+    }
+  }
+
   .included {
     @extend %grid;
     row-gap: 2.4rem;

@@ -2,6 +2,7 @@ const allDetailData = JSON.parse(sessionStorage.getItem("productData"));
 const searchParam = new URLSearchParams(window.location.search);
 const productSlug = searchParam.get("id");
 const productIncludeList = document.querySelector(".included__list");
+const featuresContainer = document.querySelector(".features");
 
 const {
   includes,
@@ -14,6 +15,16 @@ const {
   price,
 } = allDetailData.find((element) => element.slug === productSlug);
 
+// NOTE: features
+for (let featureText of features.split("\n\n")) {
+  const featuresParagraph = document.createElement("p");
+  featuresParagraph.classList.add("features__text");
+
+  featuresParagraph.textContent = featureText;
+  featuresContainer.appendChild(featuresParagraph);
+}
+
+// NOTE: included list
 for (let included of includes) {
   let productIncludeItem = document.createElement("li");
   let productIncludeItemQuantity = document.createElement("span");
@@ -23,3 +34,5 @@ for (let included of includes) {
   productIncludeItem.prepend(productIncludeItemQuantity);
   productIncludeList.appendChild(productIncludeItem);
 }
+
+console.log(others);
