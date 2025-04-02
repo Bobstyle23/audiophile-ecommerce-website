@@ -1,8 +1,13 @@
 .detail {
-  .features {
+  .features-and-included {
+    @extend %grid;
+    justify-items: stretch;
     margin-inline: 2.4rem;
+    row-gap: 8.8rem;
     margin-block: 8.8rem;
+  }
 
+  .features {
     &__title {
       @include typography(2.4rem, 700, calc(3.6 / 2.4), 0.086rem);
       margin-block-end: 2.4rem;
@@ -22,8 +27,6 @@
     @extend %grid;
     row-gap: 2.4rem;
     justify-items: start;
-    margin-inline: 2.4rem;
-    margin-block: 8.8rem;
 
     &__title {
       @include typography(2.4rem, 700, calc(3.6 / 2.4), 0.086rem);
@@ -51,23 +54,57 @@
 
 @include respond-to($breakpoint-tablets) {
   .detail {
-    .features {
+    .features-and-included {
+      row-gap: 12rem;
       margin-inline: 4rem;
       margin-block: 12rem;
+    }
+
+    .features,
+    .included {
+      &__title {
+        font-size: 3.2rem;
+        line-height: calc(3.6 / 3.2);
+        letter-spacing: 0.114rem;
+      }
     }
 
     .included {
       grid-template-columns: repeat(2, 1fr);
       align-items: start;
       row-gap: 0;
-      margin-inline: 4rem;
-      margin-block: 12rem;
+    }
+  }
+}
 
+@include respond-to($breakpoint-large-tablets) {
+  .detail {
+    .features-and-included {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 9.6rem;
+      align-items: start;
+    }
+
+    .features {
       &__title {
-        font-size: 3.2rem;
-        line-height: calc(3.6 / 3.2);
-        letter-spacing: 0.114rem;
+        margin-block-end: 3.2rem;
       }
+    }
+
+    .included {
+      grid-template-columns: 1fr;
+      row-gap: 3.2rem;
+      justify-self: center;
+    }
+  }
+}
+
+@include respond-to($breakpoint-desktops) {
+  .detail {
+    .features-and-included {
+      grid-template-columns: 2fr 1fr;
+      margin-inline: auto;
+      column-gap: 12.5rem;
     }
   }
 }
