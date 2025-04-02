@@ -4,6 +4,7 @@ const productSlug = searchParam.get("id");
 const productIncludeList = document.querySelector(".included__list");
 const featuresContainer = document.querySelector(".features");
 const recommendations = document.querySelector(".recommendations");
+const galleryContainer = document.querySelector(".gallery");
 
 const {
   includes,
@@ -15,6 +16,28 @@ const {
   categoryImage,
   price,
 } = allDetailData.find((element) => element.slug === productSlug);
+
+// NOTE: gallery
+for (let galleryImg in gallery) {
+  galleryContainer.innerHTML += `
+  <picture class="gallery__image gallery__image--${galleryImg}">
+    <source
+      srcset=${gallery[galleryImg].desktop}
+      media="(min-width: 75em)"
+      type="image/webp"
+    />
+    <source
+      srcset=${gallery[galleryImg].tablet}
+      media="(min-width: 48em)"
+      type="image/webp"
+    />
+    <img
+      src=${gallery[galleryImg].mobile}
+      alt=""
+    />
+  </picture>
+`;
+}
 
 // NOTE: recommendations
 for (let recommended of others) {
@@ -38,7 +61,7 @@ for (let recommended of others) {
       />
     </picture>
     <h3 class="recommendation__title">${recommended.name}</h3>
-    <a href="#" class="btn btn__primary recommendation__link">See product</a>
+    <a href="./category-detail.html?id=${recommended.slug}" class="btn btn__primary recommendation__link">See product</a>
 `;
   recommendations.appendChild(recommendationContainer);
 }
@@ -62,5 +85,3 @@ for (let included of includes) {
   productIncludeItem.prepend(productIncludeItemQuantity);
   productIncludeList.appendChild(productIncludeItem);
 }
-
-console.log(others);
