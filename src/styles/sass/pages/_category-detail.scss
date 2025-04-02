@@ -29,3 +29,21 @@
     }
   }
 }
+
+@include respond-to($breakpoint-tablets) {
+  .detail {
+    .included {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: start;
+      row-gap: 0;
+      margin-inline: 4rem;
+      margin-block: 12rem;
+
+      &__title {
+        font-size: 3.2rem;
+        line-height: calc(3.6 / 3.2);
+        letter-spacing: 0.114rem;
+      }
+    }
+  }
+}
