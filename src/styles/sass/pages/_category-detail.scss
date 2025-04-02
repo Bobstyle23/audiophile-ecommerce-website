@@ -51,6 +51,11 @@
 
 @include respond-to($breakpoint-tablets) {
   .detail {
+    .features {
+      margin-inline: 4rem;
+      margin-block: 12rem;
+    }
+
     .included {
       grid-template-columns: repeat(2, 1fr);
       align-items: start;
