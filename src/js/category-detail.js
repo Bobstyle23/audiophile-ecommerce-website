@@ -6,6 +6,18 @@ const featuresContainer = document.querySelector(".features");
 const recommendations = document.querySelector(".recommendations");
 const galleryContainer = document.querySelector(".gallery");
 
+const categoryDetailImage = document.querySelector(".detail__image").children;
+const goBackBtn = document.querySelector(".detail__back-btn");
+const detailNew = document.querySelector(".detail--new");
+const detailName = document.querySelector(".detail__name");
+const detailDesc = document.querySelector(".detail__description");
+const detailPrice = document.querySelector(".detail__price");
+const addToCartBtn = document.querySelector(".detail__add-to-cart");
+
+const counter = document.querySelector(".counter__count");
+const counterIncreaseBtn = document.querySelector(".btn__counter--increase");
+const counterDecreaseBtn = document.querySelector(".btn__counter--decrease");
+
 const {
   includes,
   gallery,
@@ -14,8 +26,60 @@ const {
   description,
   features,
   categoryImage,
+  new: isNew,
   price,
 } = allDetailData.find((element) => element.slug === productSlug);
+
+// NOTE: category hero
+
+goBackBtn.addEventListener("click", () => {
+  history.back();
+});
+
+const categoryDetailImages = Object.values(categoryImage);
+
+for (let [index, value] of categoryDetailImages.entries()) {
+  categoryDetailImage[index].srcset = value;
+}
+
+isNew ? (detailNew.textContent = "New Product") : "";
+detailName.textContent = name;
+detailDesc.textContent = description;
+detailPrice.textContent = price.toLocaleString("en-US", {
+  style: "currency",
+  currency: "USD",
+  maximumSignificantDigits: 4,
+});
+
+function counterFn() {
+  let count = 1;
+  return {
+    increase() {
+      count += 1;
+    },
+    decrease() {
+      if (count > 1) {
+        count -= 1;
+      }
+      return;
+    },
+    getValue() {
+      return count;
+    },
+  };
+}
+
+let count = counterFn();
+
+counterIncreaseBtn.addEventListener("click", () => {
+  count.increase();
+  counter.textContent = count.getValue();
+});
+
+counterDecreaseBtn.addEventListener("click", () => {
+  count.decrease();
+  counter.textContent = count.getValue();
+});
 
 // NOTE: gallery
 for (let galleryImg in gallery) {

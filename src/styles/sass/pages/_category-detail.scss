@@ -1,4 +1,53 @@
 .detail {
+  &__header {
+    @extend %grid;
+    justify-items: start;
+    row-gap: 3.2rem;
+    margin: 2.4rem 2.4rem 8.8rem;
+  }
+
+  &__image img {
+    border-radius: 0.8rem;
+  }
+
+  &__info {
+    @extend %flexbox;
+    align-items: flex-start;
+    gap: 2.4rem;
+  }
+
+  &--new {
+    @include typography(1.4rem, 400, $spacing: 1rem);
+    color: $color-burnt-orange;
+  }
+
+  &__name {
+    @include typography(2.8rem, 700, $spacing: 0.1rem);
+  }
+
+  &__description {
+    @extend %body;
+    color: rgba($color: #000000, $alpha: 0.5);
+  }
+
+  &__price {
+    @include typography(1.8rem, 700, $spacing: 0.129rem);
+    margin-block-end: 0.8rem;
+  }
+
+  &__cart {
+    display: inline-flex;
+    flex-flow: row wrap;
+    gap: 1.6rem;
+  }
+
+  &__back-btn {
+    @extend %body;
+    color: rgba($color: #000000, $alpha: 0.5);
+    margin-inline: 2.4rem;
+    margin-block-start: 1.6rem;
+  }
+
   .features-and-included {
     @extend %grid;
     justify-items: stretch;

@@ -11,11 +11,43 @@
     @@include('./header.html')
 
     <main class="detail">
-      <picture class="detail__image">
-        <source media="(min-width: 64em)" type="image/webp" />
-        <source media="(min-width:48em)" type="image/webp" />
-        <img alt="" />
-      </picture>
+      <a href="#" class="detail__back-btn">Go Back</a>
+
+      <header class="detail__header">
+        <picture class="detail__image">
+          <source media="(min-width: 64em)" type="image/webp" />
+          <source media="(min-width:48em)" type="image/webp" />
+          <img alt="" />
+        </picture>
+
+        <article class="detail__info">
+          <small class="detail--new"></small>
+          <h2 class="detail__name"></h2>
+          <p class="detail__description"></p>
+          <p class="detail__price"></p>
+
+          <section class="detail__cart">
+            <div class="counter">
+              <button
+                type="button"
+                class="btn btn__counter btn__counter--decrease"
+              >
+                ˗
+              </button>
+              <span class="counter__count">1</span>
+              <button
+                type="button"
+                class="btn btn__counter btn__counter--increase"
+              >
+                +
+              </button>
+            </div>
+            <button type="button" class="btn btn__primary detail__add-to-cart">
+              Add to cart
+            </button>
+          </section>
+        </article>
+      </header>
 
       <section class="features-and-included container">
         <article class="features">
