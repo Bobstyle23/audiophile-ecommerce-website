@@ -71,14 +71,18 @@ function counterFn() {
 
 let count = counterFn();
 
+let currentItemData = allDetailData.find((item) => item.slug === productSlug);
+
 counterIncreaseBtn.addEventListener("click", () => {
   count.increase();
   counter.textContent = count.getValue();
+  currentItemData = { ...currentItemData, count: count.getValue() };
 });
 
 counterDecreaseBtn.addEventListener("click", () => {
   count.decrease();
   counter.textContent = count.getValue();
+  currentItemData = { ...currentItemData, count: count.getValue() };
 });
 
 // NOTE: gallery
