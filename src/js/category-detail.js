@@ -28,6 +28,7 @@ const {
   categoryImage,
   new: isNew,
   price,
+  slug,
 } = allDetailData.find((element) => element.slug === productSlug);
 
 // NOTE: category hero
@@ -75,11 +76,13 @@ let count = counterFn();
 let currentItemData = {
   ...allDetailData.find((element) => element.slug === productSlug),
   count: count.getValue(),
+  cartImagePath: `./img/cart/image-${slug}.webp`,
 };
 
 function updateCountValue() {
   counter.textContent = count.getValue();
   currentItemData.count = count.getValue();
+  console.log(currentItemData);
 }
 
 counterIncreaseBtn.addEventListener("click", () => {
@@ -102,14 +105,16 @@ function addToCart() {
         name: itemName,
         price: itemPrice,
         count: itemCount,
+        cartImagePath: itemImage,
       } = currentItemData;
       const totalPrice = itemPrice * itemCount;
-      cart = [...cart, { itemName, totalPrice, itemCount }];
+      cart = [...cart, { itemName, totalPrice, itemCount, itemImage }];
       localStorage.setItem("cart", JSON.stringify(cart));
     },
     delete() {
       cart = [];
       localStorage.removeItem("cart");
+      localStorage.clear();
     },
   };
 }
