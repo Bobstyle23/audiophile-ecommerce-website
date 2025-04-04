@@ -37,9 +37,10 @@ goBackBtn.addEventListener("click", () => {
   history.back();
 });
 
-const categoryDetailImages = Object.values(categoryImage);
+const categoryDetailImages = Object.values(categoryImage).reverse();
 
 for (let [index, value] of categoryDetailImages.entries()) {
+  console.log(value);
   categoryDetailImage[index].srcset = value;
 }
 
@@ -82,7 +83,6 @@ let currentItemData = {
 function updateCountValue() {
   counter.textContent = count.getValue();
   currentItemData.count = count.getValue();
-  console.log(currentItemData);
 }
 
 counterIncreaseBtn.addEventListener("click", () => {

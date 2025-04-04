@@ -6,7 +6,10 @@
     margin: 2.4rem 2.4rem 8.8rem;
   }
 
-  &__image img {
+  &__image,
+  img {
+    max-width: none;
+    width: 100%;
     border-radius: 0.8rem;
   }
 
@@ -103,6 +106,20 @@
 
 @include respond-to($breakpoint-tablets) {
   .detail {
+    &__header {
+      grid-template-columns: minmax(0, auto) 1fr;
+      margin: 2.4rem 4rem 12rem;
+      column-gap: 6.9rem;
+    }
+
+    &__info {
+      gap: 3.2rem;
+    }
+
+    &__back-btn {
+      margin: 3.2rem 4rem 0;
+    }
+
     .features-and-included {
       row-gap: 12rem;
       margin-inline: 4rem;
