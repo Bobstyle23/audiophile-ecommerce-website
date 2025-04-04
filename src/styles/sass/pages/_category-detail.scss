@@ -47,7 +47,6 @@
   &__back-btn {
     @extend %body;
     color: rgba($color: #000000, $alpha: 0.5);
-    margin-inline: 2.4rem;
     margin-block-start: 1.6rem;
   }
 
@@ -108,8 +107,9 @@
   .detail {
     &__header {
       grid-template-columns: minmax(0, auto) 1fr;
-      margin: 2.4rem 4rem 12rem;
+      margin: 3.2rem 4rem 12rem;
       column-gap: 6.9rem;
+      row-gap: 0;
     }
 
     &__info {
@@ -117,7 +117,8 @@
     }
 
     &__back-btn {
-      margin: 3.2rem 4rem 0;
+      grid-column: 1 / -1;
+      margin: 0 0 2.4rem;
     }
 
     .features-and-included {
@@ -167,6 +168,25 @@
 
 @include respond-to($breakpoint-desktops) {
   .detail {
+    &__header {
+      margin: 8rem auto 16rem;
+      column-gap: 12.5rem;
+    }
+
+    &__back-btn {
+      margin-block-end: 5.6rem;
+    }
+
+    &__name {
+      font-size: 4rem;
+      line-height: calc(4.4 / 4);
+      letter-spacing: 0.143rem;
+    }
+
+    &__price {
+      margin-block-end: 1.5rem;
+    }
+
     .features-and-included {
       grid-template-columns: 2fr 1fr;
       margin-inline: auto;

@@ -107,6 +107,7 @@ function addToCart() {
         count: itemCount,
         cartImagePath: itemImage,
       } = currentItemData;
+
       const totalPrice = itemPrice * itemCount;
       cart = [...cart, { itemName, totalPrice, itemCount, itemImage }];
       localStorage.setItem("cart", JSON.stringify(cart));
