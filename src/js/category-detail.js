@@ -40,7 +40,6 @@ goBackBtn.addEventListener("click", () => {
 const categoryDetailImages = Object.values(categoryImage).reverse();
 
 for (let [index, value] of categoryDetailImages.entries()) {
-  console.log(value);
   categoryDetailImage[index].srcset = value;
 }
 
@@ -109,9 +108,12 @@ function addToCart() {
       } = currentItemData;
 
       const totalPrice = itemPrice * itemCount;
+
       cart = [...cart, { itemName, totalPrice, itemCount, itemImage }];
       localStorage.setItem("cart", JSON.stringify(cart));
+      console.log(cart);
     },
+
     delete() {
       cart = [];
       localStorage.removeItem("cart");
