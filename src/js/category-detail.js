@@ -121,6 +121,11 @@ function addToCart() {
         cart = [...cart, { itemName, totalPrice, itemCount, itemImage }];
         localStorage.setItem("cart", JSON.stringify(cart));
       }
+
+      const totalCartItemPrice = cart.reduce(
+        (accumulator, current) => accumulator + current.totalPrice,
+        0,
+      );
     },
 
     delete() {

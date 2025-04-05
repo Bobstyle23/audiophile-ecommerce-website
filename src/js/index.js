@@ -7,22 +7,6 @@ const heroLink = document.querySelector(".hero__link");
 const productTitles = document.querySelectorAll(".product__title");
 const productLinks = document.querySelectorAll(".product__link");
 
-for (let [index, value] of productTitles.entries()) {
-  const productTitle = value.textContent
-    .trim()
-    .split(" ")
-    .filter((item) => Boolean(item) && item !== "\n")
-    .join("-");
-
-  productLinks[index].href += productTitle;
-}
-
-heroLink.href = `${heroLink.href}${heroProductName.textContent
-  .replace("Ⅱ", "two")
-  .split(" ")
-  .join("-")
-  .toLowerCase()}`;
-
 const toggleMenu = () => {
   menu.classList.toggle("open");
   overlay.classList.toggle("overlay__hidden");
@@ -43,3 +27,19 @@ overlay.addEventListener("click", () => toggleMenu());
     toggleMenu();
   });
 });
+
+for (let [index, value] of productTitles.entries()) {
+  const productTitle = value.textContent
+    .trim()
+    .split(" ")
+    .filter((item) => Boolean(item) && item !== "\n")
+    .join("-");
+
+  productLinks[index].href += productTitle;
+}
+
+heroLink.href = `${heroLink.href}${heroProductName.textContent
+  .replace("Ⅱ", "two")
+  .split(" ")
+  .join("-")
+  .toLowerCase()}`;
