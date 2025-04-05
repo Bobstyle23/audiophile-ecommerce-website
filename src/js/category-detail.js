@@ -109,9 +109,18 @@ function addToCart() {
 
       const totalPrice = itemPrice * itemCount;
 
-      cart = [...cart, { itemName, totalPrice, itemCount, itemImage }];
-      localStorage.setItem("cart", JSON.stringify(cart));
-      console.log(cart);
+      const cartItemIndex = cart.findIndex(
+        (item) => item.itemName === itemName,
+      );
+
+      if (cartItemIndex !== -1) {
+        cart[cartItemIndex].itemCount += itemCount;
+        cart[cartItemIndex].totalPrice += totalPrice;
+        localStorage.setItem("cart", JSON.stringify(cart));
+      } else {
+        cart = [...cart, { itemName, totalPrice, itemCount, itemImage }];
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
     },
 
     delete() {
