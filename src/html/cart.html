@@ -1,0 +1,30 @@
+<article class="cart">
+  <header class="cart__header">
+    <h3 class="cart__heading">Cart <span class="cart__count"></span></h3>
+    <button class="cart__delete-btn btn btn__link" type="button">
+      Remove all
+    </button>
+  </header>
+  <section class="cart__products">
+    <div class="cart__product">
+      <img src="" alt="" class="product__img" />
+      <h3 class="product__title"></h3>
+      <small class="product__price"></small>
+
+      <div class="counter">
+        <button type="button" class="btn btn__counter btn__counter--decrease">
+          ˗
+        </button>
+        <span class="counter__count">1</span>
+        <button type="button" class="btn btn__counter btn__counter--increase">
+          +
+        </button>
+      </div>
+    </div>
+  </section>
+  <div class="cart__total">
+    <p class="total__text">Total</p>
+    <h3 class="total__price"></h3>
+  </div>
+  <button type="button" class="btn btn__primary">Checkout</button>
+</article>

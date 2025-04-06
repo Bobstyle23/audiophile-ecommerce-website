@@ -1,0 +1,1 @@
+(()=>{document.querySelector(".cart__count");const e=JSON.parse(localStorage.getItem("cart"))||[];document.querySelector(".cart__product"),document.querySelector(".total__price"),e.map((e=>e.totalPrice)).reduce(((e,t)=>e+t),0);for(let t of e);console.log(e)})();

@@ -18,6 +18,13 @@ const counter = document.querySelector(".counter__count");
 const counterIncreaseBtn = document.querySelector(".btn__counter--increase");
 const counterDecreaseBtn = document.querySelector(".btn__counter--decrease");
 
+import {
+  formatPrice,
+  counterFn,
+  addToCart,
+  totalCartItemsPrice,
+} from "./utilities.js";
+
 const {
   includes,
   gallery,
@@ -46,30 +53,7 @@ for (let [index, value] of categoryDetailImages.entries()) {
 isNew ? (detailNew.textContent = "New Product") : "";
 detailName.textContent = name;
 detailDesc.textContent = description;
-detailPrice.textContent = price.toLocaleString("en-US", {
-  style: "currency",
-  currency: "USD",
-  maximumSignificantDigits: 4,
-});
-
-// PERF: counter function
-function counterFn() {
-  let count = 1;
-  return {
-    increase() {
-      count += 1;
-    },
-    decrease() {
-      if (count > 1) {
-        count -= 1;
-      }
-      return;
-    },
-    getValue() {
-      return count;
-    },
-  };
-}
+detailPrice.textContent = formatPrice(price);
 
 let count = counterFn();
 
@@ -94,49 +78,7 @@ counterDecreaseBtn.addEventListener("click", () => {
   updateCountValue();
 });
 
-// PERF: add to cart
-function addToCart() {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  return {
-    add() {
-      const {
-        name: itemName,
-        price: itemPrice,
-        count: itemCount,
-        cartImagePath: itemImage,
-      } = currentItemData;
-
-      const totalPrice = itemPrice * itemCount;
-
-      const cartItemIndex = cart.findIndex(
-        (item) => item.itemName === itemName,
-      );
-
-      if (cartItemIndex !== -1) {
-        cart[cartItemIndex].itemCount += itemCount;
-        cart[cartItemIndex].totalPrice += totalPrice;
-        localStorage.setItem("cart", JSON.stringify(cart));
-      } else {
-        cart = [...cart, { itemName, totalPrice, itemCount, itemImage }];
-        localStorage.setItem("cart", JSON.stringify(cart));
-      }
-
-      const totalCartItemPrice = cart.reduce(
-        (accumulator, current) => accumulator + current.totalPrice,
-        0,
-      );
-    },
-
-    delete() {
-      cart = [];
-      localStorage.removeItem("cart");
-      localStorage.clear();
-    },
-  };
-}
-
-const updateCart = addToCart();
+const updateCart = addToCart(currentItemData);
 
 addToCartBtn.addEventListener("click", (event) => {
   event.preventDefault();

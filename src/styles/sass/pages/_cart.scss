@@ -1,0 +1,23 @@
+.cart {
+  @extend %flexbox;
+  align-items: flex-start;
+  gap: 3.2rem;
+  padding-block: 3.2rem;
+  padding-inline: 2.8rem;
+  background-color: orangered;
+  border-radius: 0.8rem;
+  width: clamp(32.7rem, 100%, 37.7rem);
+
+  &__product {
+    .product__img {
+      width: 6.4rem;
+      height: auto;
+      border-radius: 0.8rem;
+    }
+
+    .product__title {
+      @extend %body;
+      font-weight: 700;
+    }
+  }
+}
