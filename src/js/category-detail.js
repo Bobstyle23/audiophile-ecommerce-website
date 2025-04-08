@@ -68,7 +68,8 @@ function updateCountValue() {
   currentItemData.count = count.getValue();
 }
 
-counterIncreaseBtn.addEventListener("click", () => {
+counterIncreaseBtn.addEventListener("click", (event) => {
+  console.log(event);
   count.increase();
   updateCountValue();
 });

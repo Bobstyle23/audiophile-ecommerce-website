@@ -1,1 +1,1 @@
-(()=>{"use strict";(JSON.parse(localStorage.getItem("cart"))||[]).map((e=>e.totalPrice)).reduce(((e,t)=>e+t),0)})();
+(()=>{"use strict";(JSON.parse(localStorage.getItem("cart"))||[]).map((e=>e)).reduce(((e,t)=>e+t.itemPrice*t.itemCount),0)})();

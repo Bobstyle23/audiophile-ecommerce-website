@@ -36,18 +36,15 @@ function addToCart(currentItem) {
         cartImagePath: itemImage,
       } = currentItem;
 
-      const totalPrice = itemPrice * itemCount;
-
       const cartItemIndex = cart.findIndex(
         (item) => item.itemName === itemName,
       );
 
       if (cartItemIndex !== -1) {
         cart[cartItemIndex].itemCount += itemCount;
-        cart[cartItemIndex].totalPrice += totalPrice;
         localStorage.setItem("cart", JSON.stringify(cart));
       } else {
-        cart = [...cart, { itemName, totalPrice, itemCount, itemImage }];
+        cart = [...cart, { itemName, itemPrice, itemCount, itemImage }];
         localStorage.setItem("cart", JSON.stringify(cart));
       }
     },
@@ -61,7 +58,7 @@ function addToCart(currentItem) {
 }
 
 const totalCartItemsPrice = cart
-  .map((item) => item.totalPrice)
-  .reduce((acc, cur) => acc + cur, 0);
+  .map((item) => item)
+  .reduce((acc, cur) => acc + cur.itemPrice * cur.itemCount, 0);
 
 export { formatPrice, counterFn, addToCart, totalCartItemsPrice };
