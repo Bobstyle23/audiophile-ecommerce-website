@@ -18,12 +18,7 @@ const counter = document.querySelector(".counter__count");
 const counterIncreaseBtn = document.querySelector(".btn__counter--increase");
 const counterDecreaseBtn = document.querySelector(".btn__counter--decrease");
 
-import {
-  formatPrice,
-  counterFn,
-  addToCart,
-  totalCartItemsPrice,
-} from "./utilities.js";
+import { formatPrice, counterFn, addToCart } from "./utilities.js";
 
 const {
   includes,
@@ -68,8 +63,7 @@ function updateCountValue() {
   currentItemData.count = count.getValue();
 }
 
-counterIncreaseBtn.addEventListener("click", (event) => {
-  console.log(event);
+counterIncreaseBtn.addEventListener("click", () => {
   count.increase();
   updateCountValue();
 });
