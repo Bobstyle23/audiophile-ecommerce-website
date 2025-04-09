@@ -3,14 +3,28 @@ const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 const cartProductsContainer = document.querySelector(".cart__products");
 const cartTotalPrice = document.querySelector(".total__price");
 const cartBtn = document.querySelector(".header__btn--cart");
+const cartDeleteBtn = document.querySelector(".cart__delete-btn");
 const cartContainer = document.querySelector(".cart");
+const overlay = document.querySelector(".overlay");
 
-import { formatPrice, totalCartItemsPrice } from "./utilities.js";
+import { formatPrice, totalCartItemsPrice, addToCart } from "./utilities.js";
+
+let cartControl = addToCart();
+
+function toggleCart() {
+  cartContainer.classList.toggle("move-to-top");
+  overlay.classList.toggle("overlay__hidden");
+}
 
 cartBtn.addEventListener("click", () => {
-  cartContainer.classList.toggle("move-to-top");
   const parentContainer = cartContainer.parentNode;
   parentContainer.style.position = "relative";
+  toggleCart();
+});
+
+cartDeleteBtn.addEventListener("click", () => {
+  cartControl.delete();
+  toggleCart();
 });
 
 for (let cartItem of cartItems) {

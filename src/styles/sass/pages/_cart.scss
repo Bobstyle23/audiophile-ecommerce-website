@@ -5,13 +5,13 @@
   padding-block: 3.2rem;
   padding-inline: 2.8rem;
   border-radius: 0.8rem;
-  width: clamp(min(32.7rem, 100%), 100%, 37.7rem);
+  width: clamp(min(32.7rem, 100%), 10vw, 37.7rem);
   background-color: $color-white;
   position: absolute;
   top: calc(9rem + 2.4rem);
   right: 0;
   transition: transform 0.4s ease;
-  z-index: 1;
+  z-index: 2;
 
   &__header,
   &__total {
@@ -83,7 +83,7 @@
   }
 
   &__product {
-    .product__img {
+    .cart-product__img {
       width: 6.4rem;
       height: auto;
       border-radius: 0.8rem;
@@ -93,5 +93,17 @@
       @extend %body;
       font-weight: 700;
     }
+  }
+}
+
+@include respond-to($breakpoint-tablets) {
+  .cart {
+    right: 4rem;
+  }
+}
+
+@include respond-to($breakpoint-desktops) {
+  .cart {
+    right: 16.5rem;
   }
 }
