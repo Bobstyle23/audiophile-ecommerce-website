@@ -10,8 +10,13 @@
   position: absolute;
   top: calc(9rem + 2.4rem);
   right: 0;
+  transform: translateY(-100rem);
   transition: transform 0.4s ease;
-  z-index: 2;
+  z-index: 11;
+
+  &.open {
+    transform: translateY(0);
+  }
 
   &__header,
   &__total {

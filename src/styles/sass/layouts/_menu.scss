@@ -6,16 +6,16 @@
   transition: transform 0.4s ease-in-out;
   transform: translateY(-100rem);
   background-color: $color-white;
-  z-index: 2;
+  z-index: 11;
 
   section {
     margin: 0;
     padding: 8.4rem 2.4rem 3.5rem;
   }
-}
 
-.menu.open {
-  transform: translateY(0);
+  &.open {
+    transform: translateY(0);
+  }
 }
 
 @include respond-to($breakpoint-tablets) {

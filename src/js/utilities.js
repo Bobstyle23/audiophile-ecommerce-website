@@ -61,4 +61,14 @@ const totalCartItemsPrice = cart
   .map((item) => item)
   .reduce((acc, cur) => acc + cur.itemPrice * cur.itemCount, 0);
 
-export { formatPrice, counterFn, addToCart, totalCartItemsPrice };
+function toggleOverlay(toggleItem, toggleCallback) {
+  toggleItem.addEventListener("click", () => toggleCallback());
+}
+
+export {
+  formatPrice,
+  counterFn,
+  addToCart,
+  totalCartItemsPrice,
+  toggleOverlay,
+};

@@ -12,7 +12,7 @@ import { formatPrice, totalCartItemsPrice, addToCart } from "./utilities.js";
 let cartControl = addToCart();
 
 function toggleCart() {
-  cartContainer.classList.toggle("move-to-top");
+  cartContainer.classList.toggle("open");
   overlay.classList.toggle("overlay__hidden");
 }
 
@@ -26,6 +26,10 @@ cartDeleteBtn.addEventListener("click", () => {
   cartControl.delete();
   toggleCart();
 });
+
+if (cartItems.length < 1) {
+  cartDeleteBtn.textContent = "";
+}
 
 for (let cartItem of cartItems) {
   cartProductsContainer.innerHTML += `
