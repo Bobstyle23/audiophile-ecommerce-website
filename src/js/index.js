@@ -7,16 +7,20 @@ const heroLink = document.querySelector(".hero__link");
 const productTitles = document.querySelectorAll(".product__title");
 const productLinks = document.querySelectorAll(".product__link");
 
-import { toggleOverlay } from "./utilities.js";
+import { toggleOverlay, hasClassOpen } from "./utilities.js";
 
 const toggleMenu = () => {
   menu.classList.toggle("open");
   overlay.classList.toggle("overlay__hidden");
 };
 
-hamburger.addEventListener("click", () => toggleMenu());
+toggleOverlay(overlay, () => {
+  if (hasClassOpen(menu)) {
+    toggleMenu();
+  }
+});
 
-toggleOverlay(overlay, toggleMenu);
+hamburger.addEventListener("click", () => toggleMenu());
 
 [...menu.children[0].children].forEach((menuItem) => {
   menuItem.addEventListener("click", (event) => {

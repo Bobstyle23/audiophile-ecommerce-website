@@ -57,13 +57,17 @@ function addToCart(currentItem) {
   };
 }
 
+function toggleOverlay(toggleItem, toggleCallback) {
+  return toggleItem.addEventListener("click", () => toggleCallback());
+}
+
+function hasClassOpen(element) {
+  return element.classList.contains("open");
+}
+
 const totalCartItemsPrice = cart
   .map((item) => item)
   .reduce((acc, cur) => acc + cur.itemPrice * cur.itemCount, 0);
-
-function toggleOverlay(toggleItem, toggleCallback) {
-  toggleItem.addEventListener("click", () => toggleCallback());
-}
 
 export {
   formatPrice,
@@ -71,4 +75,5 @@ export {
   addToCart,
   totalCartItemsPrice,
   toggleOverlay,
+  hasClassOpen,
 };

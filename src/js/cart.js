@@ -7,7 +7,13 @@ const cartDeleteBtn = document.querySelector(".cart__delete-btn");
 const cartContainer = document.querySelector(".cart");
 const overlay = document.querySelector(".overlay");
 
-import { formatPrice, totalCartItemsPrice, addToCart } from "./utilities.js";
+import {
+  formatPrice,
+  totalCartItemsPrice,
+  addToCart,
+  toggleOverlay,
+  hasClassOpen,
+} from "./utilities.js";
 
 let cartControl = addToCart();
 
@@ -15,6 +21,12 @@ function toggleCart() {
   cartContainer.classList.toggle("open");
   overlay.classList.toggle("overlay__hidden");
 }
+
+toggleOverlay(overlay, () => {
+  if (hasClassOpen(cartContainer)) {
+    toggleCart();
+  }
+});
 
 cartBtn.addEventListener("click", () => {
   const parentContainer = cartContainer.parentNode;
