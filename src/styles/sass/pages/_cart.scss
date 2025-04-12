@@ -5,7 +5,7 @@
   padding-block: 3.2rem;
   padding-inline: 2.8rem;
   border-radius: 0.8rem;
-  width: clamp(min(32.7rem, 100%), 10vw, 37.7rem);
+  width: clamp(min(32.7rem, 100%), 100%, 37.7rem);
   background-color: $color-white;
   position: absolute;
   top: calc(9rem + 2.4rem);
