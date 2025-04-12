@@ -70,6 +70,7 @@ for (let cartItem of cartItems) {
   const increaseBtn = elem.querySelector(".btn__counter--increase");
   const decreaseBtn = elem.querySelector(".btn__counter--decrease");
 
+  // FIX: Update the count according to cartItems itemCount, i.e cartItems: itemCount = 4, cart: itemCount = 1, increase from 4
   const localCounter = counterFn();
 
   const updateCount = () => {
