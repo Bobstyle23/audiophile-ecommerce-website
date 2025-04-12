@@ -65,6 +65,18 @@ function hasClassOpen(element) {
   return element.classList.contains("open");
 }
 
+function toggleElements(mainElement, checkElement, overlay) {
+  if (hasClassOpen(checkElement)) {
+    checkElement.classList.remove("open");
+    setTimeout(() => {
+      mainElement.classList.add("open");
+    });
+  } else {
+    mainElement.classList.toggle("open");
+    overlay.classList.toggle("overlay__hidden");
+  }
+}
+
 const totalCartItemsPrice = cart
   .map((item) => item)
   .reduce((acc, cur) => acc + cur.itemPrice * cur.itemCount, 0);
@@ -76,4 +88,5 @@ export {
   totalCartItemsPrice,
   toggleOverlay,
   hasClassOpen,
+  toggleElements,
 };

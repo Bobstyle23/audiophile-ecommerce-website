@@ -1,3 +1,12 @@
+import {
+  formatPrice,
+  totalCartItemsPrice,
+  addToCart,
+  toggleOverlay,
+  hasClassOpen,
+  toggleElements,
+} from "./utilities.js";
+
 const cartItemsCount = document.querySelector(".cart__count");
 const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 const cartProductsContainer = document.querySelector(".cart__products");
@@ -6,20 +15,12 @@ const cartBtn = document.querySelector(".header__btn--cart");
 const cartDeleteBtn = document.querySelector(".cart__delete-btn");
 const cartContainer = document.querySelector(".cart");
 const overlay = document.querySelector(".overlay");
-
-import {
-  formatPrice,
-  totalCartItemsPrice,
-  addToCart,
-  toggleOverlay,
-  hasClassOpen,
-} from "./utilities.js";
+const menu = document.querySelector(".menu");
 
 let cartControl = addToCart();
 
 function toggleCart() {
-  cartContainer.classList.toggle("open");
-  overlay.classList.toggle("overlay__hidden");
+  toggleElements(cartContainer, menu, overlay);
 }
 
 toggleOverlay(overlay, () => {

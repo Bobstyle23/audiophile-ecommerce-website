@@ -1,5 +1,8 @@
+import { toggleOverlay, hasClassOpen, toggleElements } from "./utilities.js";
+
 const hamburger = document.querySelector(".header__btn--hamburger");
 const menu = document.querySelector(".menu");
+const cart = document.querySelector(".cart");
 const overlay = document.querySelector(".overlay");
 const heroProductName = document.querySelector(".hero__title");
 const heroLink = document.querySelector(".hero__link");
@@ -7,11 +10,8 @@ const heroLink = document.querySelector(".hero__link");
 const productTitles = document.querySelectorAll(".product__title");
 const productLinks = document.querySelectorAll(".product__link");
 
-import { toggleOverlay, hasClassOpen } from "./utilities.js";
-
 const toggleMenu = () => {
-  menu.classList.toggle("open");
-  overlay.classList.toggle("overlay__hidden");
+  toggleElements(menu, cart, overlay);
 };
 
 toggleOverlay(overlay, () => {
