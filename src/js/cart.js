@@ -5,6 +5,7 @@ import {
   toggleOverlay,
   hasClassOpen,
   toggleElements,
+  counterFn,
 } from "./utilities.js";
 
 const cartItemsCount = document.querySelector(".cart__count");
@@ -63,6 +64,28 @@ for (let cartItem of cartItems) {
     </div>
 `;
 }
+
+[...cartProductsContainer.children].forEach((elem, idx) => {
+  const countEl = elem.querySelector(".counter__count");
+  const increaseBtn = elem.querySelector(".btn__counter--increase");
+  const decreaseBtn = elem.querySelector(".btn__counter--decrease");
+
+  const localCounter = counterFn();
+
+  const updateCount = () => {
+    countEl.textContent = localCounter.getValue();
+  };
+
+  increaseBtn.addEventListener("click", () => {
+    localCounter.increase();
+    updateCount();
+  });
+
+  decreaseBtn.addEventListener("click", () => {
+    localCounter.decrease();
+    updateCount();
+  });
+});
 
 cartItemsCount.textContent += cartItems.length ? `(${cartItems.length})` : "";
 cartTotalPrice.textContent = formatPrice(totalCartItemsPrice);
