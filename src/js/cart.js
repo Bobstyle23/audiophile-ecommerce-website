@@ -45,6 +45,8 @@ if (cartItems.length < 1) {
   cartDeleteBtn.textContent = "";
 }
 
+console.log(cartItems);
+
 for (let cartItem of cartItems) {
   cartProductsContainer.innerHTML += `
    <div class="cart__product">
@@ -70,21 +72,27 @@ for (let cartItem of cartItems) {
   const increaseBtn = elem.querySelector(".btn__counter--increase");
   const decreaseBtn = elem.querySelector(".btn__counter--decrease");
 
-  // FIX: Update the count according to cartItems itemCount, i.e cartItems: itemCount = 4, cart: itemCount = 1, increase from 4
-  const localCounter = counterFn();
+  let count = cartItems[idx].itemCount || 1;
 
   const updateCount = () => {
-    countEl.textContent = localCounter.getValue();
+    countEl.textContent = count;
+    cartItems[idx].itemCount = count;
   };
 
   increaseBtn.addEventListener("click", () => {
-    localCounter.increase();
+    count++;
     updateCount();
+    cartItems[idx].itemCount = count;
+    localStorage.setItem("cart", JSON.stringify(cartItems));
   });
 
   decreaseBtn.addEventListener("click", () => {
-    localCounter.decrease();
-    updateCount();
+    if (count > 1) {
+      count--;
+      updateCount();
+      cartItems[idx].itemCount = count;
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+    }
   });
 });
 
