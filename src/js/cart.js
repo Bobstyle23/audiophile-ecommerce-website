@@ -5,7 +5,6 @@ import {
   toggleOverlay,
   hasClassOpen,
   toggleElements,
-  counterFn,
 } from "./utilities.js";
 
 const cartItemsCount = document.querySelector(".cart__count");
@@ -44,8 +43,6 @@ cartDeleteBtn.addEventListener("click", () => {
 if (cartItems.length < 1) {
   cartDeleteBtn.textContent = "";
 }
-
-console.log(cartItems);
 
 for (let cartItem of cartItems) {
   cartProductsContainer.innerHTML += `
