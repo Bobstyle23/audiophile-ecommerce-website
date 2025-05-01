@@ -10,6 +10,11 @@ const heroLink = document.querySelector(".hero__link");
 const productTitles = document.querySelectorAll(".product__title");
 const productLinks = document.querySelectorAll(".product__link");
 
+const data = require("./data.json");
+
+const storageItem = JSON.stringify(data);
+sessionStorage.setItem("productData", storageItem);
+
 const toggleMenu = () => {
   toggleElements(menu, cart, overlay);
 };

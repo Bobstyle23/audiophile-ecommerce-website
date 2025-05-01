@@ -1,19 +1,14 @@
 const searchParams = new URLSearchParams(window.location.search);
 const categoryId = searchParams.get("id");
 const heading = document.querySelector(".category__heading");
-const data = require("./data.json");
+const data = JSON.parse(sessionStorage.getItem("productData"));
 
 const categoryProducts = document.querySelector(".category__products");
 
 heading.textContent = categoryId;
 
-const storageItem = JSON.stringify(data);
-sessionStorage.setItem("productData", storageItem);
-
 data.forEach((item) => {
   if (item.category === categoryId) {
-    console.log(item);
-
     const categoryProduct = document.createElement("article");
     categoryProduct.classList.add("category__product");
     categoryProduct.classList.add("container");

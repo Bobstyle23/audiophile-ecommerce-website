@@ -27,6 +27,12 @@
     border-radius: 0.8rem;
   }
 
+  &__image,
+  img {
+    width: 100%;
+    max-width: none;
+  }
+
   &__info {
     @extend %flexbox;
     gap: 2.4rem;
