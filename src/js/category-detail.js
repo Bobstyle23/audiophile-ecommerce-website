@@ -14,7 +14,7 @@ const detailDesc = document.querySelector(".detail__description");
 const detailPrice = document.querySelector(".detail__price");
 const addToCartBtn = document.querySelector(".detail__add-to-cart");
 
-const counter = document.querySelector(".counter__count");
+const counter = document.querySelector(".counter__count--detail");
 const counterIncreaseBtn = document.querySelector(".btn__counter--increase");
 const counterDecreaseBtn = document.querySelector(".btn__counter--decrease");
 

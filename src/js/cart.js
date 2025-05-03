@@ -55,7 +55,7 @@ for (let cartItem of cartItems) {
         <button type="button" class="btn btn__counter btn__counter--decrease">
           ˗
         </button>
-        <span class="counter__count">${cartItem.itemCount || 1}</span>
+        <span class="counter__count counter__count--cart">${cartItem.itemCount || 1}</span>
         <button type="button" class="btn btn__counter btn__counter--increase">
           +
         </button>
@@ -65,7 +65,7 @@ for (let cartItem of cartItems) {
 }
 
 [...cartProductsContainer.children].forEach((elem, idx) => {
-  const countEl = elem.querySelector(".counter__count");
+  const countEl = elem.querySelector(".counter__count--cart");
   const increaseBtn = elem.querySelector(".btn__counter--increase");
   const decreaseBtn = elem.querySelector(".btn__counter--decrease");
 
