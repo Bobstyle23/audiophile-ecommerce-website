@@ -1,6 +1,13 @@
 .btn {
   @extend %button-style;
 
+  &__back {
+    @extend %body;
+    color: rgba($color: #000000, $alpha: 0.5);
+    width: auto;
+    height: auto;
+  }
+
   &__primary {
     background-color: $color-burnt-orange;
     color: $color-white;

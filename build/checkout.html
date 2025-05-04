@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Category | Detail</title>
+    <title>Audiophile | Checkout</title>
     <link href="./css/main.css" rel="stylesheet" />
   </head>
   <body>
+    <div class="overlay overlay__hidden"></div>
     <header class="header">
   <section class="header__content container">
     <button type="menu" class="header__btn header__btn--hamburger">
@@ -107,135 +108,8 @@
   <a href="./checkout.html" class="btn btn__primary cart__btn">Checkout</a>
 </article>
 
-    <div class="overlay overlay__hidden"></div>
-
-    <main class="detail">
-      <header class="detail__header container">
-        <a href="#" class="btn btn__back detail__back-btn">Go&#160;Back</a>
-
-        <picture class="detail__image">
-          <source media="(min-width: 64em)" type="image/webp" />
-          <source media="(min-width: 48em)" type="image/webp" />
-          <img alt="" />
-        </picture>
-
-        <article class="detail__info">
-          <small class="detail--new"></small>
-          <h2 class="detail__name"></h2>
-          <p class="detail__description"></p>
-          <p class="detail__price"></p>
-
-          <section class="detail__cart">
-            <div class="counter">
-              <button
-                type="button"
-                class="btn btn__counter btn__counter--decrease"
-              >
-                ˗
-              </button>
-              <span class="counter__count counter__count--detail">1</span>
-              <button
-                type="button"
-                class="btn btn__counter btn__counter--increase"
-              >
-                +
-              </button>
-            </div>
-            <button type="button" class="btn btn__primary detail__add-to-cart">
-              Add to&#160;cart
-            </button>
-          </section>
-        </article>
-      </header>
-
-      <section class="features-and-included container">
-        <article class="features">
-          <h3 class="features__title">Features</h3>
-        </article>
-
-        <article class="included">
-          <h3 class="included__title">In&#160;the box</h3>
-          <ul class="included__list" role="list"></ul>
-        </article>
-      </section>
-
-      <section class="gallery container"></section>
- <section class="recommendations container">
-  <h2 class="recommendations__heading">You may also like</h2>
-</section>
-
-      <section class="categories container">
-  <article class="category">
-    <img
-      class="category__image"
-      src="./img/shared/desktop/image-category-thumbnail-headphones.webp"
-      alt="Big headphones with golden cover"
-    />
-    <h3 class="category__title">Headphones</h3>
-    <a
-      href="./category.html?id=headphones"
-      class="btn btn__link category__link"
-    >
-      Shop
-      <svg class="icon icon__arrow">
-        <use href="./img/svgsprite/sprite.symbol.svg#icon-arrow-right" />
-      </svg>
-    </a>
-  </article>
-  <article class="category">
-    <img
-      class="category__image"
-      src="./img/shared/desktop/image-category-thumbnail-speakers.webp"
-      alt="Modern speaker with 2 big speakers"
-    />
-    <h3 class="category__title">Speakers</h3>
-    <a href="./category.html?id=speakers" class="btn btn__link category__link">
-      Shop
-      <svg class="icon icon__arrow">
-        <use href="./img/svgsprite/sprite.symbol.svg#icon-arrow-right" />
-      </svg>
-    </a>
-  </article>
-  <article class="category">
-    <img
-      class="category__image"
-      src="./img/shared/desktop/image-category-thumbnail-earphones.webp"
-      alt="Modern earphones with charging cover"
-    />
-    <h3 class="category__title">Earphones</h3>
-    <a href="./category.html?id=earphones" class="btn btn__link category__link">
-      Shop
-      <svg class="icon icon__arrow">
-        <use href="./img/svgsprite/sprite.symbol.svg#icon-arrow-right" />
-      </svg>
-    </a>
-  </article>
-</section>
- <section class="store container">
-  <picture class="store__image">
-    <source
-      srcset="./img/shared/desktop/image-best-gear.webp"
-      media="(min-width: 75em)"
-      type="image/webp"
-    />
-    <source
-      srcset="./img/shared/tablet/image-best-gear.webp"
-      media="(min-width: 48em)"
-      type="image/webp"
-    />
-    <img src="./img/shared/mobile/image-best-gear.webp" alt="" />
-  </picture>
-  <h2 class="store__title">Bringing you the <span>best</span> audio gear</h2>
-  <p class="store__description">
-    Located at&#160;the heart of&#160;New York City, Audiophile is&#160;the premier store for
-    high end headphones, earphones, speakers, and audio accessories. We&#160;have a
-    large showroom and luxury demonstration rooms available for you to&#160;browse
-    and experience a&#160;wide range of&#160;our products. Stop by&#160;our store to&#160;meet some
-    of&#160;the fantastic people who make Audiophile the best place to&#160;buy your
-    portable audio equipment.
-  </p>
-</section>
-
+    <main class="checkout">
+      <a href="#" class="btn btn__back checkout__back-btn">Go&#160;Back</a>
     </main>
 
     <footer class="footer">
@@ -282,8 +156,8 @@
   </section>
 </footer>
 
-    <script src="./js/index.bundle.js"></script>
     <script src="./js/cart.bundle.js"></script>
-    <script src="./js/detail.bundle.js"></script>
+    <script src="./js/index.bundle.js"></script>
+    <script src="./js/checkout.bundle.js"></script>
   </body>
 </html>

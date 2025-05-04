@@ -27,6 +27,7 @@ const config = {
     category: "./src/js/category.js",
     detail: "./src/js/category-detail.js",
     cart: "./src/js/cart.js",
+    checkout: "./src/js/checkout.js",
     utilities: "./src/js/utilities.js",
   },
   output: {

@@ -1,0 +1,1 @@
+document.querySelector(".checkout__back-btn").addEventListener("click",(()=>{history.back()}));

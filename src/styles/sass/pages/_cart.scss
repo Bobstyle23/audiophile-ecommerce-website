@@ -84,6 +84,7 @@
   }
 
   &__btn {
+    @extend %flexbox;
     width: 100%;
   }
 

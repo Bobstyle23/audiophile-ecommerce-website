@@ -16,6 +16,7 @@ const cartDeleteBtn = document.querySelector(".cart__delete-btn");
 const cartContainer = document.querySelector(".cart");
 const overlay = document.querySelector(".overlay");
 const menu = document.querySelector(".menu");
+const checkoutBtn = document.querySelector(".cart__btn");
 
 let cartControl = addToCart();
 
@@ -27,6 +28,14 @@ toggleOverlay(overlay, () => {
   if (hasClassOpen(cartContainer)) {
     toggleCart();
   }
+});
+
+checkoutBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  setTimeout(() => {
+    window.location.href = event.target.href;
+  }, 250);
+  toggleCart();
 });
 
 cartBtn.addEventListener("click", () => {
