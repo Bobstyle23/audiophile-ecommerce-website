@@ -1,7 +1,17 @@
+import { formatPrice } from "./utilities.js";
 const goBackBtn = document.querySelector(".checkout__back-btn");
 const cartItems = JSON.parse(localStorage.getItem("cart"));
 const itemsContainer = document.querySelector(".summary__items");
-import { formatPrice } from "./utilities.js";
+const itemsTotalPrice = document.querySelector(".summary__amount-total");
+const vat = document.querySelector(".vat");
+const itemsGrandTotalPrice = document.querySelector(".grand-total");
+
+const totalCartItemsPrice = cartItems.reduce(
+  (acc, cur) => acc + cur.itemPrice,
+  0,
+);
+const totalPriceWithVat = Math.floor(totalCartItemsPrice * 0.2);
+const grandTotal = totalCartItemsPrice + totalPriceWithVat + 50;
 
 for (let item of cartItems) {
   itemsContainer.innerHTML += `
@@ -14,6 +24,11 @@ for (let item of cartItems) {
 `;
 }
 
+itemsTotalPrice.textContent = formatPrice(totalCartItemsPrice);
+
+vat.textContent = formatPrice(Number(totalPriceWithVat));
 goBackBtn.addEventListener("click", () => {
   history.back();
 });
+
+itemsGrandTotalPrice.textContent = formatPrice(grandTotal);
