@@ -92,20 +92,20 @@
           </form>
           <form class="form form__payment">
             <h2 class="form__title">Payment Details</h2>
-            <div>
-              <label for="e-money" class="label">Payment Method</label>
-              <input
-                class="input input--e-money"
-                type="radio"
-                name="e-money"
-                id="e-money"
-              />
-              <input
-                class="input input--cash"
-                type="radio"
-                name="cash"
-                id="cash"
-              />
+            <h3 class="label">Payment Method</h3>
+            <div class="radio-box">
+              <label for="e-money" class="custom-radio">
+                <input checked type="radio" name="e-money" value="e-money" />
+                <span class="radio-mark"></span>
+                e-Money
+              </label>
+            </div>
+            <div class="radio-box">
+              <label for="cash" class="custom-radio">
+                <input type="radio" name="cash" value="cash" />
+                <span class="radio-mark"></span>
+                Cash on Delivery
+              </label>
             </div>
           </form>
         </article>
