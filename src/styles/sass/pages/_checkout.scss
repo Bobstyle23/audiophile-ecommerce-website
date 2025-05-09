@@ -51,6 +51,48 @@
 
   .summary {
     &__items {
+      @extend %flexbox;
+      align-items: stretch;
+      gap: 2.4rem;
+
+      & > div {
+        @extend %grid;
+        justify-items: start;
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: repeat(2, auto);
+        column-gap: 1.6rem;
+      }
+
+      .items {
+        &__img {
+          width: 6.4rem;
+          height: 6.4rem;
+          border-radius: 0.8rem;
+        }
+
+        &__name {
+          @include typography(1.5rem, 700, calc(2.5 / 1.5));
+          grid-column: 2;
+          grid-row: 1;
+        }
+
+        &__price {
+          @include typography(1.4rem, 700, calc(2.5 / 1.4));
+          color: rgba(#000, 0.5);
+          grid-column: 2;
+          grid-row: 2;
+        }
+
+        &__count {
+          @include typography(1.5rem, 700, calc(2.5 / 1.5));
+          color: rgba(#000, 0.5);
+        }
+
+        &__count,
+        &__img {
+          grid-row: 1 / 3;
+        }
+      }
     }
 
     &__total {
