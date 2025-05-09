@@ -191,20 +191,51 @@
           </form>
           <form class="form form__payment">
             <h2 class="form__title">Payment Details</h2>
-            <h3 class="label">Payment Method</h3>
+            <h3 class="label label__title">Payment Method</h3>
             <div class="radio-box">
-              <label for="e-money" class="custom-radio">
-                <input checked type="radio" name="e-money" value="e-money" />
-                <span class="radio-mark"></span>
-                e-Money
-              </label>
+              <input
+                checked
+                type="radio"
+                name="payment"
+                value="e-money"
+                id="e-money"
+                class="radio"
+              />
+              <label class="label label__radio" for="e-money">e-Money</label>
             </div>
             <div class="radio-box">
-              <label for="cash" class="custom-radio">
-                <input type="radio" name="cash" value="cash" />
-                <span class="radio-mark"></span>
-                Cash on&#160;Delivery
-              </label>
+              <input
+                type="radio"
+                name="payment"
+                id="cash"
+                value="cash"
+                class="radio"
+              />
+              <label class="label label__radio" for="cash"
+                >Cash on&#160;Delivery</label
+              >
+            </div>
+          </form>
+          <form class="form form__numbers">
+            <div>
+              <label for="e-money-number" class="label">e-Money Number</label>
+              <input
+                class="input input--e-money-number"
+                type="number"
+                name="e-money-number"
+                id="e-money-number"
+                placeholder="238521993"
+              />
+            </div>
+            <div>
+              <label for="e-money-pin" class="label">e-Money Pin</label>
+              <input
+                class="input input--e-money-pin"
+                type="number"
+                name="e-money-pin"
+                id="e-money-pin"
+                placeholder="6891"
+              />
             </div>
           </form>
         </article>
