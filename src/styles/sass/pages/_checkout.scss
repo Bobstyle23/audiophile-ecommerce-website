@@ -129,3 +129,62 @@
     }
   }
 }
+
+@include respond-to($breakpoint-tablets) {
+  .checkout {
+    padding: 4.8rem 4rem 11.6rem;
+
+    &__form,
+    &__summary {
+      padding: 3.2rem;
+    }
+
+    &__title {
+      font-size: 3.2rem;
+      line-height: calc(3.6 / 3.2);
+      letter-spacing: 0.114rem;
+      margin-bottom: 4.1rem;
+    }
+
+    .form {
+      &__billing {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-block-end: 5.2rem;
+
+        & > div:first-of-type {
+          grid-column: 1 / 2;
+        }
+      }
+
+      &__shipping {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-block-end: 5.2rem;
+
+        & > div:first-of-type {
+          grid-column: 1 / -1;
+        }
+      }
+
+      &__payment {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        & > div {
+          grid-column: 2;
+        }
+
+        & > h3 {
+          grid-column: 1 / 2;
+        }
+      }
+
+      &__numbers {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 0;
+      }
+    }
+  }
+}
