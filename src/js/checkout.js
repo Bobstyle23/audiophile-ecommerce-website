@@ -1,4 +1,5 @@
 import { formatPrice } from "./utilities.js";
+const checkoutContainer = document.querySelector(".checkout__container");
 const goBackBtn = document.querySelector(".checkout__back-btn");
 const cartItems = JSON.parse(localStorage.getItem("cart"));
 const itemsContainer = document.querySelector(".summary__items");
@@ -44,4 +45,15 @@ paymentMethods.forEach((method) => {
       }
     });
   });
+});
+
+function handleResize() {
+  const isDesktop = window.innerWidth >= 1200;
+  checkoutContainer.classList.toggle("container", isDesktop);
+}
+
+handleResize();
+
+window.addEventListener("resize", function () {
+  handleResize();
 });
