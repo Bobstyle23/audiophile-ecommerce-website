@@ -188,3 +188,19 @@
     }
   }
 }
+
+@include respond-to($breakpoint-desktops) {
+  .checkout {
+    padding: 8rem 0 14rem;
+
+    &__container {
+      grid-template-columns: 2fr 1fr;
+      align-items: start;
+      column-gap: 3rem;
+    }
+
+    &__form {
+      padding: 5.4rem 4.8rem 4.8rem;
+    }
+  }
+}
