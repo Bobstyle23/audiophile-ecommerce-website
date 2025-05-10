@@ -104,10 +104,18 @@
   &:has(input[type="radio"]:checked) {
     border: 1px solid $color-burnt-orange;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .radio {
   width: 2rem;
   height: 2rem;
   accent-color: $color-burnt-orange;
+
+  &:hover {
+    cursor: pointer;
+  }
 }

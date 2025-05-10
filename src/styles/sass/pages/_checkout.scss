@@ -197,6 +197,10 @@
       grid-template-columns: 2fr 1fr;
       align-items: start;
       column-gap: 3rem;
+
+      a {
+        grid-column: 1 / -1;
+      }
     }
 
     &__form {
