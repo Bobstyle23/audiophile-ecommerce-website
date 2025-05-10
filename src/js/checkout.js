@@ -5,9 +5,11 @@ const itemsContainer = document.querySelector(".summary__items");
 const itemsTotalPrice = document.querySelector(".summary__amount-total");
 const vat = document.querySelector(".vat");
 const itemsGrandTotalPrice = document.querySelector(".grand-total");
+const paymentMethods = document.getElementsByName("payment");
+const eMoneyNumberInputs = document.querySelector(".form__numbers");
 
 const totalCartItemsPrice = cartItems.reduce(
-  (acc, cur) => acc + cur.itemPrice,
+  (acc, cur) => acc + cur.itemPrice * cur.itemCount,
   0,
 );
 const totalPriceWithVat = Math.floor(totalCartItemsPrice * 0.2);
@@ -32,3 +34,14 @@ goBackBtn.addEventListener("click", () => {
 });
 
 itemsGrandTotalPrice.textContent = formatPrice(grandTotal);
+
+paymentMethods.forEach((method) => {
+  method.addEventListener("change", (event) => {
+    const isCash = event.target.value === "cash";
+    [...eMoneyNumberInputs.children].forEach((element) => {
+      if (element.nodeType === 1) {
+        element.classList.toggle("hidden", isCash);
+      }
+    });
+  });
+});

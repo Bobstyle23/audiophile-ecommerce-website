@@ -51,6 +51,9 @@
 
   &__disabled {
     background-color: $color-peachy-orange;
-    cursor: not-allowed !important;
+
+    &:hover {
+      cursor: not-allowed;
+    }
   }
 }
