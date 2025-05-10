@@ -48,4 +48,9 @@
       color: $color-burnt-orange;
     }
   }
+
+  &__disabled {
+    background-color: $color-peachy-orange;
+    cursor: not-allowed !important;
+  }
 }

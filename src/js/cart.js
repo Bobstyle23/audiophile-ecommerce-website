@@ -30,6 +30,16 @@ toggleOverlay(overlay, () => {
   }
 });
 
+if (cartItems.length < 1) {
+  checkoutBtn.setAttribute("disabled", true);
+}
+
+if (checkoutBtn.hasAttribute("disabled")) {
+  checkoutBtn.classList.add("btn__disabled");
+  // PERF: disables click event
+  checkoutBtn.style.pointerEvents = "none";
+}
+
 checkoutBtn.addEventListener("click", (event) => {
   event.preventDefault();
   setTimeout(() => {
