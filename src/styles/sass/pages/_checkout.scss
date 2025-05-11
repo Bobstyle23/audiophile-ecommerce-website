@@ -4,6 +4,7 @@
   @extend %flexbox;
   align-items: stretch;
   gap: 2.4rem;
+  position: relative;
 
   &__container {
     @extend %grid;

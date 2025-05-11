@@ -42,4 +42,11 @@
       fill: $color-burnt-orange;
     }
   }
+
+  &__confirmed {
+    width: 6.4rem;
+    height: 6.4rem;
+    fill: $color-burnt-orange;
+    stroke: $color-white;
+  }
 }
