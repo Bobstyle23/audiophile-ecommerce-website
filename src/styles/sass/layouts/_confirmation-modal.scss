@@ -3,12 +3,23 @@
   background-color: $color-white;
   border-radius: 0.8rem;
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: min(32.7rem, 80%);
   height: auto;
+  z-index: 10;
   max-width: 54rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &__active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
 
   @extend %flexbox;
   align-items: flex-start;

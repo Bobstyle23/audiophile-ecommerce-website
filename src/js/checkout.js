@@ -1,4 +1,5 @@
-import { formatPrice } from "./utilities.js";
+import { formatPrice, addToCart } from "./utilities.js";
+const overlay = document.querySelector(".overlay");
 const checkoutContainer = document.querySelector(".checkout__container");
 const goBackBtn = document.querySelector(".checkout__back-btn");
 const cartItems = JSON.parse(localStorage.getItem("cart"));
@@ -8,10 +9,13 @@ const vat = document.querySelector(".vat");
 const itemsGrandTotalPrice = document.querySelector(".grand-total");
 const paymentMethods = document.getElementsByName("payment");
 const eMoneyNumberInputs = document.querySelector(".form__numbers");
+const payBtn = document.querySelector(".summary__btn");
 
+const confirmationContainer = document.querySelector(".confirmation");
 const confirmedOrdersContainer = document.querySelector(
   ".confirmation__orders",
 );
+const confirmBtn = document.querySelector(".confirmation__btn");
 
 const totalCartItemsPrice = cartItems.reduce(
   (acc, cur) => acc + cur.itemPrice * cur.itemCount,
@@ -30,6 +34,32 @@ for (let item of cartItems) {
 </div>
 `;
 }
+
+const cartController = addToCart();
+
+function removeModal() {
+  overlay.classList.add("overlay__hidden");
+  confirmationContainer.classList.remove("confirmation__active");
+  cartController.delete();
+}
+
+payBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setTimeout(() => {
+    confirmationContainer.classList.add("confirmation__active");
+    overlay.classList.remove("overlay__hidden");
+  }, 700);
+});
+
+overlay.addEventListener("click", removeModal);
+
+confirmBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  setTimeout(() => {
+    window.location.href = event.target.href;
+  }, 200);
+  removeModal();
+});
 
 confirmedOrdersContainer.innerHTML = `
   <div class="orders">
