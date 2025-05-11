@@ -9,6 +9,10 @@ const itemsGrandTotalPrice = document.querySelector(".grand-total");
 const paymentMethods = document.getElementsByName("payment");
 const eMoneyNumberInputs = document.querySelector(".form__numbers");
 
+const confirmedOrdersContainer = document.querySelector(
+  ".confirmation__orders",
+);
+
 const totalCartItemsPrice = cartItems.reduce(
   (acc, cur) => acc + cur.itemPrice * cur.itemCount,
   0,
@@ -26,6 +30,22 @@ for (let item of cartItems) {
 </div>
 `;
 }
+
+confirmedOrdersContainer.innerHTML = `
+  <div class="orders">
+   <img src=${cartItems[0].itemImage} class="orders__img" />
+   <h3 class="orders__name">${cartItems[0].itemName.split(" ")[0]}</h3>
+   <small class="order__price">${formatPrice(cartItems[0].itemPrice)}</small>
+   <p class="order___count">x${cartItems[0].itemCount}</p>
+   <div class="line"></div>
+   <p class="">and ${cartItems.length - 1} other item(s)</p>
+  </div>
+  
+  <div class="total">
+   <h3>Grand Total</h3>
+   <p>${formatPrice(grandTotal)}</p>
+  </div>
+`;
 
 itemsTotalPrice.textContent = formatPrice(totalCartItemsPrice);
 

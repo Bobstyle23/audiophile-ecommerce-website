@@ -1,9 +1,9 @@
 .confirmation {
   padding: 3.2rem;
-  background-color: $color-soft-white;
+  background-color: $color-white;
   border-radius: 0.8rem;
   position: absolute;
-  top: 35%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: min(32.7rem, 80%);
@@ -25,6 +25,90 @@
     text-transform: none;
   }
 
+  &__orders {
+    @extend %grid;
+    border-radius: 0.8rem;
+    align-items: stretch;
+    justify-items: start;
+    width: 100%;
+
+    & > div:first-of-type {
+      @extend %grid;
+      grid-template-columns: auto 1fr auto;
+      grid-template-rows: repeat(2, 1fr);
+      justify-items: start;
+      background-color: #f1f1f1;
+      column-gap: 1.6rem;
+      padding: 2.4rem;
+      width: 100%;
+      border-top-left-radius: 0.8rem;
+      border-top-right-radius: 0.8rem;
+
+      img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 0.8rem;
+        grid-row: 1 / 3;
+      }
+
+      h3 {
+        grid-column: 2;
+        grid-row: 1;
+        @include typography(1.5rem, 700, calc(2.5 / 1.5));
+      }
+
+      small {
+        grid-column: 2;
+        grid-row: 2;
+        @include typography(1.4rem, 700, calc(2.5 / 1.4));
+        color: rgba(#000, 0.5);
+      }
+
+      p {
+        &:first-of-type {
+          grid-row: 1;
+          @include typography(1.5rem, 700, calc(2.5 / 1.5));
+          color: rgba(#000, 0.5);
+        }
+
+        &:last-of-type {
+          grid-column: 1 / -1;
+          justify-self: center;
+          @include typography(1.2rem, 700, $spacing: -0.021rem);
+          color: rgba(#000, 0.5);
+          text-transform: none;
+        }
+      }
+    }
+
+    .line {
+      background-color: rgba(#000, 0.08);
+      grid-column: 1 / -1;
+      width: 100%;
+      height: 1px;
+      margin-block: 1.2rem;
+    }
+
+    & > div:last-of-type {
+      background-color: $color-black;
+      padding: 1.6rem 2.4rem 2rem;
+      width: 100%;
+      border-bottom-left-radius: 0.8rem;
+      border-bottom-right-radius: 0.8rem;
+
+      h3 {
+        @include typography(1.5rem, 500, calc(2.5 / 1.5));
+        color: rgba($color-white, 0.5);
+        margin-block-end: 0.8rem;
+      }
+
+      p {
+        @include typography(1.8rem, 700);
+        color: $color-white;
+      }
+    }
+  }
+
   &__btn {
     width: 100%;
     text-align: center;
@@ -43,5 +127,11 @@
       line-height: calc(3.6 / 3.2);
       letter-spacing: 0.114rem;
     }
+  }
+}
+
+@include respond-to($breakpoint-desktops) {
+  .confirmation {
+    top: 25%;
   }
 }
