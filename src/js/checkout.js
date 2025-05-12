@@ -28,7 +28,7 @@ for (let item of cartItems) {
   itemsContainer.innerHTML += `
 <div>
  <img src=${item.itemImage} class="items__img" />
- <h3 class="items__name">${item.itemName.split(" ")[0]}</h3>
+ <h3 class="items__name">${item.itemName}</h3>
  <small class="items__price">${formatPrice(item.itemPrice)}</small>
  <p class="items__count">x${item.itemCount}</p>
 </div>
@@ -67,19 +67,10 @@ const othersHTML =
         <p>and ${cartItems.length - 1} other item(s)</p>`
     : "<p></p>";
 
-const firstItemName = cartItems[0].itemName.includes("XX99")
-  ? cartItems[0].itemName
-      .replace("Mark", "MK")
-      .split(" ")
-      .slice(0, 3)
-      .join(",")
-      .replaceAll(",", " ")
-  : cartItems[0].itemName.split(" ")[0];
-
 confirmedOrdersContainer.innerHTML = `
   <div class="orders">
    <img src=${cartItems[0].itemImage} class="orders__img" />
-   <h3 class="orders__name">${firstItemName}</h3>
+   <h3 class="orders__name">${cartItems[0].itemName}</h3>
    <small class="order__price">${formatPrice(cartItems[0].itemPrice)}</small>
    <p class="order___count">x${cartItems[0].itemCount}</p>
      ${othersHTML}

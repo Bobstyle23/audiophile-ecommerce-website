@@ -73,7 +73,16 @@ counterDecreaseBtn.addEventListener("click", () => {
   updateCountValue();
 });
 
-const updateCart = addToCart(currentItemData);
+const cartItemName = currentItemData.name.includes("XX99")
+  ? currentItemData.name
+      .replace("Mark", "MK")
+      .split(" ")
+      .slice(0, 3)
+      .join(",")
+      .replaceAll(",", " ")
+  : currentItemData.name.split(" ")[0];
+
+const updateCart = addToCart({ ...currentItemData, name: cartItemName });
 
 addToCartBtn.addEventListener("click", (event) => {
   event.preventDefault();

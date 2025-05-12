@@ -67,7 +67,7 @@ for (let cartItem of cartItems) {
   cartProductsContainer.innerHTML += `
    <div class="cart__product">
       <img src=${cartItem.itemImage} alt="" class="cart-product__img" />
-      <h3 class="cart-product__title">${cartItem.itemName.split(" ")[0]}</h3>
+      <h3 class="cart-product__title">${cartItem.itemName}</h3>
       <small class="cart-product__price">${formatPrice(cartItem.itemPrice)}</small>
 
       <div class="counter cart-product__counter">
