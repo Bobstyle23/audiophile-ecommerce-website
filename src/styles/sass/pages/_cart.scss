@@ -5,17 +5,22 @@
   padding-block: 3.2rem;
   padding-inline: 2.8rem;
   border-radius: 0.8rem;
-  width: clamp(min(32.7rem, 100%), 100%, 37.7rem);
+  width: clamp(min(32.7rem, 80%), 90%, 37.7rem);
   background-color: $color-white;
   position: absolute;
-  top: calc(9rem + 2.4rem);
-  right: 0;
-  transform: translateY(-100rem);
-  transition: transform 0.4s ease;
+  top: 10%;
+  right: 50%;
+  transform: translate(50%, -100%);
+  transition: opacity 0.4s ease;
   z-index: 11;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 
   &.open {
-    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   &__header,
@@ -104,12 +109,14 @@
 
 @include respond-to($breakpoint-tablets) {
   .cart {
+    transform: translate(0, -100%);
     right: 4rem;
   }
 }
 
 @include respond-to($breakpoint-desktops) {
   .cart {
+    transform: translate(0, -100%);
     right: 16.5rem;
   }
 }
