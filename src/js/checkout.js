@@ -61,14 +61,28 @@ confirmBtn.addEventListener("click", function (event) {
   removeModal();
 });
 
+const othersHTML =
+  cartItems.length - 1 > 0
+    ? ` <div class="line"></div>
+        <p>and ${cartItems.length - 1} other item(s)</p>`
+    : "<p></p>";
+
+const firstItemName = cartItems[0].itemName.includes("XX99")
+  ? cartItems[0].itemName
+      .replace("Mark", "MK")
+      .split(" ")
+      .slice(0, 3)
+      .join(",")
+      .replaceAll(",", " ")
+  : cartItems[0].itemName.split(" ")[0];
+
 confirmedOrdersContainer.innerHTML = `
   <div class="orders">
    <img src=${cartItems[0].itemImage} class="orders__img" />
-   <h3 class="orders__name">${cartItems[0].itemName.split(" ")[0]}</h3>
+   <h3 class="orders__name">${firstItemName}</h3>
    <small class="order__price">${formatPrice(cartItems[0].itemPrice)}</small>
    <p class="order___count">x${cartItems[0].itemCount}</p>
-   <div class="line"></div>
-   <p class="">and ${cartItems.length - 1} other item(s)</p>
+     ${othersHTML}
   </div>
   
   <div class="total">
