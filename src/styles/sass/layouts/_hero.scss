@@ -80,6 +80,7 @@
     &__content {
       text-align: left;
       grid-column: 1 / 2;
+      max-width: 40rem;
     }
 
     &__link {
