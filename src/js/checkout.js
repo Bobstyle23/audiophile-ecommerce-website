@@ -48,11 +48,8 @@ payBtn.addEventListener("click", () => {
   setTimeout(() => {
     confirmationContainer.classList.add("confirmation__active");
     overlay.classList.remove("overlay__hidden");
-    document.body.classList.add("no-scroll");
   }, 700);
 });
-
-overlay.addEventListener("click", removeModal);
 
 confirmBtn.addEventListener("click", function (event) {
   event.preventDefault();
