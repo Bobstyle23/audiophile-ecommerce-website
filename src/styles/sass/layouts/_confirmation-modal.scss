@@ -139,5 +139,35 @@
       line-height: calc(3.6 / 3.2);
       letter-spacing: 0.114rem;
     }
+
+    &__orders {
+      grid-template-columns: 1.5fr 1fr;
+      height: 14rem;
+
+      & > div:first-of-type {
+        border-radius: 0;
+        border-top-left-radius: 0.8rem;
+        border-bottom-left-radius: 0.8rem;
+      }
+
+      & > div:last-of-type {
+        padding: 4.2rem 0 4.2rem 2.4rem;
+        border-radius: 0;
+        border-top-right-radius: 0.8rem;
+        border-bottom-right-radius: 0.8rem;
+      }
+    }
+  }
+}
+
+@include respond-to($breakpoint-desktops) {
+  .confirmation {
+    top: 25%;
+
+    &__orders {
+      & > div:last-of-type {
+        padding-inline-start: 3.2rem;
+      }
+    }
   }
 }
