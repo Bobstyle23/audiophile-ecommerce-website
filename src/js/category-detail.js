@@ -82,7 +82,9 @@ const cartItemName = currentItemData.name.includes("XX99")
       .replaceAll(",", " ")
   : currentItemData.name.split(" ")[0];
 
-const updateCart = addToCart({ ...currentItemData, name: cartItemName });
+currentItemData.name = cartItemName;
+
+const updateCart = addToCart(currentItemData);
 
 addToCartBtn.addEventListener("click", (event) => {
   event.preventDefault();
