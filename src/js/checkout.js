@@ -103,6 +103,11 @@ paymentMethods.forEach((method) => {
 function handleResize() {
   const isDesktop = window.innerWidth >= 1200;
   checkoutContainer.classList.toggle("container", isDesktop);
+  if (isDesktop) {
+    checkoutContainer.style.width = "111rem";
+  } else {
+    checkoutContainer.style.width = "100%";
+  }
 }
 
 handleResize();

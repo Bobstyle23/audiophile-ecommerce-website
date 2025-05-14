@@ -112,7 +112,6 @@ let totalPrice = totalCartItemsPrice;
       updateCount();
       cartItems[idx].itemCount = count;
       totalPrice -= cartItems[idx].itemPrice;
-
       cartTotalPrice.textContent = formatPrice(totalPrice);
       localStorage.setItem("cart", JSON.stringify(cartItems));
     }

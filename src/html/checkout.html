@@ -18,7 +18,10 @@
           <form class="form form__billing">
             <h2 class="form__title">Billing Details</h2>
             <div>
-              <label for="name" class="label">Name</label>
+              <div class="label__box">
+                <label for="name" class="label">Name</label>
+                <label for="name" class="label--error">Cannot be empty</label>
+              </div>
               <input
                 class="input input--name"
                 type="text"
@@ -29,7 +32,11 @@
               />
             </div>
             <div>
-              <label for="email" class="label">Email Address</label>
+              <div class="label__box">
+                <label for="email" class="label">Email Address</label>
+                <label for="email" class="label--error">Cannot be empty</label>
+              </div>
+
               <input
                 class="input input--email"
                 type="email"
@@ -40,7 +47,11 @@
               />
             </div>
             <div>
-              <label for="phone" class="label">Phone Number</label>
+              <div class="label__box">
+                <label for="phone" class="label">Phone Number</label>
+                <label for="phone" class="label--error">Cannot be empty</label>
+              </div>
+
               <input
                 class="input input--phone"
                 type="number"
@@ -54,7 +65,13 @@
           <form class="form form__shipping">
             <h2 class="form__title">Shipping Info</h2>
             <div>
-              <label for="address" class="label">Your Address</label>
+              <div class="label__box">
+                <label for="address" class="label">Your Address</label>
+                <label for="address" class="label--error"
+                  >Cannot be empty</label
+                >
+              </div>
+
               <input
                 class="input input--address"
                 type="text"
@@ -65,7 +82,13 @@
               />
             </div>
             <div>
-              <label for="zip code" class="label">ZIP Code</label>
+              <div class="label__box">
+                <label for="zip code" class="label">ZIP Code</label>
+                <label for="zip code" class="label--error"
+                  >Cannot be empty</label
+                >
+              </div>
+
               <input
                 class="input input--zip-code"
                 type="number"
@@ -76,7 +99,11 @@
               />
             </div>
             <div>
-              <label for="city" class="label">City</label>
+              <div class="label__box">
+                <label for="city" class="label">City</label>
+                <label for="city" class="label--error">Cannot be empty</label>
+              </div>
+
               <input
                 class="input input--city"
                 type="text"
@@ -87,7 +114,13 @@
               />
             </div>
             <div>
-              <label for="country" class="label">Country</label>
+              <div class="label__box">
+                <label for="country" class="label">Country</label>
+                <label for="country" class="label--error"
+                  >Cannot be empty</label
+                >
+              </div>
+
               <input
                 class="input input--country"
                 type="text"
@@ -127,7 +160,13 @@
           </form>
           <form class="form form__numbers">
             <div>
-              <label for="e-money-number" class="label">e-Money Number</label>
+              <div class="label__box">
+                <label for="e-money-number" class="label">e-Money Number</label>
+                <label for="e-money-number" class="label--error"
+                  >Cannot be empty</label
+                >
+              </div>
+
               <input
                 class="input input--e-money-number"
                 type="number"
@@ -137,7 +176,13 @@
               />
             </div>
             <div>
-              <label for="e-money-pin" class="label">e-Money Pin</label>
+              <div class="label__box">
+                <label for="e-money-pin" class="label">e-Money PIN</label>
+                <label for="e-money-pin" class="label--error"
+                  >Cannot be empty</label
+                >
+              </div>
+
               <input
                 class="input input--e-money-pin"
                 type="number"
