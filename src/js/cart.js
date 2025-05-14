@@ -83,6 +83,8 @@ for (let cartItem of cartItems) {
 `;
 }
 
+let totalPrice = totalCartItemsPrice;
+
 [...cartProductsContainer.children].forEach((elem, idx) => {
   const countEl = elem.querySelector(".counter__count--cart");
   const increaseBtn = elem.querySelector(".btn__counter--increase");
@@ -99,6 +101,8 @@ for (let cartItem of cartItems) {
     count++;
     updateCount();
     cartItems[idx].itemCount = count;
+    totalPrice += cartItems[idx].itemPrice;
+    cartTotalPrice.textContent = formatPrice(totalPrice);
     localStorage.setItem("cart", JSON.stringify(cartItems));
   });
 
@@ -107,10 +111,13 @@ for (let cartItem of cartItems) {
       count--;
       updateCount();
       cartItems[idx].itemCount = count;
+      totalPrice -= cartItems[idx].itemPrice;
+
+      cartTotalPrice.textContent = formatPrice(totalPrice);
       localStorage.setItem("cart", JSON.stringify(cartItems));
     }
   });
 });
 
 cartItemsCount.textContent += cartItems.length ? `(${cartItems.length})` : "";
-cartTotalPrice.textContent = formatPrice(totalCartItemsPrice);
+cartTotalPrice.textContent = formatPrice(totalPrice);
