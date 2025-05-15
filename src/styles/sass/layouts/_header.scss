@@ -15,6 +15,22 @@
 
   &__btn {
     background: none;
+
+    &--cart {
+      position: relative;
+    }
+  }
+
+  .count {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    background-color: $color-burnt-orange;
+    border-radius: 50%;
+    color: $color-white;
+    @extend %flexbox;
   }
 }
 

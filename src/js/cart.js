@@ -17,6 +17,7 @@ const cartContainer = document.querySelector(".cart");
 const overlay = document.querySelector(".overlay");
 const menu = document.querySelector(".menu");
 const checkoutBtn = document.querySelector(".cart__btn");
+const countBadge = document.querySelector(".count");
 
 let cartControl = addToCart();
 
@@ -32,6 +33,9 @@ toggleOverlay(overlay, () => {
 
 if (cartItems.length < 1) {
   checkoutBtn.setAttribute("disabled", true);
+  countBadge.classList.add("visually-hidden");
+} else {
+  countBadge.textContent = cartItems.length;
 }
 
 if (checkoutBtn.hasAttribute("disabled")) {
