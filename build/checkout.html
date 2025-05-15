@@ -159,6 +159,12 @@
                 placeholder="+1 202-555-0136"
                 required
               />
+              <input
+                type="submit"
+                name="Submit"
+                value="Submit"
+                class="visually-hidden"
+              />
             </div>
           </form>
           <form class="form form__shipping">
@@ -182,17 +188,15 @@
             </div>
             <div>
               <div class="label__box">
-                <label for="zip code" class="label">ZIP Code</label>
-                <label for="zip code" class="label--error"
-                  >Cannot be&#160;empty</label
-                >
+                <label for="zip" class="label">ZIP Code</label>
+                <label for="zip" class="label--error">Cannot be&#160;empty</label>
               </div>
 
               <input
                 class="input input--zip-code"
                 type="number"
-                name="zip code"
-                id="zip code"
+                name="zip"
+                id="zip"
                 placeholder="10001"
                 required
               />
@@ -227,6 +231,12 @@
                 id="country"
                 placeholder="United States"
                 required
+              />
+              <input
+                type="submit"
+                name="Submit"
+                value="Submit"
+                class="visually-hidden"
               />
             </div>
           </form>
@@ -269,9 +279,10 @@
               <input
                 class="input input--e-money-number"
                 type="number"
-                name="e-money-numbers"
+                name="e-money-number"
                 id="e-money-number"
                 placeholder="238521993"
+                required
               />
             </div>
             <div>
@@ -288,6 +299,13 @@
                 name="e-money-numbers"
                 id="e-money-pin"
                 placeholder="6891"
+                required
+              />
+              <input
+                type="submit"
+                name="Submit"
+                value="Submit"
+                class="visually-hidden"
               />
             </div>
           </form>
@@ -313,7 +331,7 @@
               <p class="summary__amount grand-total"></p>
             </div>
           </div>
-          <button type="button" class="btn btn__primary summary__btn">
+          <button type="submit" class="btn btn__primary summary__btn">
             Continue & Pay
           </button>
         </article>
