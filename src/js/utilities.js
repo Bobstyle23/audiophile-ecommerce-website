@@ -77,6 +77,42 @@ function toggleElements(mainElement, checkElement, overlay) {
   }
 }
 
+function renderCart() {
+  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+  return {
+    renderCartItems() {
+      document.querySelector(".cart__products").innerHTML = "";
+
+      console.log("RENDERING...");
+      console.log("ITEMS:", cartItems);
+
+      for (let cartItem of cartItems) {
+        document.querySelector(".cart__products").innerHTML += `
+       <div class="cart__product">
+        <img src=${cartItem.itemImage} alt="" class="cart-product__img" />
+        <h3 class="cart-product__title">${cartItem.itemName}</h3>
+        <small class="cart-product__price">${formatPrice(cartItem.itemPrice)}</small>
+
+       <div class="counter cart-product__counter">
+        <button type="button" class="btn btn__counter btn__counter--decrease">
+          ˗
+        </button>
+        <span class="counter__count counter__count--cart">${cartItem.itemCount || 1}</span>
+        <button type="button" class="btn btn__counter btn__counter--increase">
+          +
+        </button>
+       </div>
+      </div>`;
+      }
+      return cartItems;
+    },
+    cartItemsLength() {
+      return cartItems.length;
+    },
+  };
+}
+
 const totalCartItemsPrice = cart
   .map((item) => item)
   .reduce((acc, cur) => acc + cur.itemPrice * cur.itemCount, 0);
@@ -89,4 +125,5 @@ export {
   toggleOverlay,
   hasClassOpen,
   toggleElements,
+  renderCart,
 };
