@@ -78,10 +78,10 @@ function toggleElements(mainElement, checkElement, overlay) {
 }
 
 function renderCart() {
-  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-
   return {
     renderCartItems() {
+      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
       document.querySelector(".cart__products").innerHTML = "";
 
       console.log("RENDERING...");
@@ -108,6 +108,7 @@ function renderCart() {
       return cartItems;
     },
     cartItemsLength() {
+      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
       return cartItems.length;
     },
   };
